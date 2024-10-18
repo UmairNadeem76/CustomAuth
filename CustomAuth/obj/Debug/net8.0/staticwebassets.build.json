@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "f7nPI7CE6MD0JKJlif4awAkt8mb2DtA7WNnJiCg0fGA=",
+  "Hash": "vviVdHpTnXgwASCJyWZCndtVdAMYblht86irjIk8DBg=",
   "Source": "CustomAuth",
   "BasePath": "_content/CustomAuth",
   "Mode": "Default",
@@ -16,44 +16,6 @@
     }
   ],
   "Assets": [
-    {
-      "Identity": "D:\\Microsoft Visual Studio Projects\\CustomAuth\\CustomAuth\\obj\\Debug\\net8.0\\scopedcss\\bundle\\CustomAuth.styles.css",
-      "SourceId": "CustomAuth",
-      "SourceType": "Computed",
-      "ContentRoot": "D:\\Microsoft Visual Studio Projects\\CustomAuth\\CustomAuth\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
-      "BasePath": "_content/CustomAuth",
-      "RelativePath": "CustomAuth.styles.css",
-      "AssetKind": "All",
-      "AssetMode": "CurrentProject",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "ScopedCss",
-      "AssetTraitValue": "ApplicationBundle",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "D:\\Microsoft Visual Studio Projects\\CustomAuth\\CustomAuth\\obj\\Debug\\net8.0\\scopedcss\\bundle\\CustomAuth.styles.css"
-    },
-    {
-      "Identity": "D:\\Microsoft Visual Studio Projects\\CustomAuth\\CustomAuth\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\CustomAuth.bundle.scp.css",
-      "SourceId": "CustomAuth",
-      "SourceType": "Computed",
-      "ContentRoot": "D:\\Microsoft Visual Studio Projects\\CustomAuth\\CustomAuth\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
-      "BasePath": "_content/CustomAuth",
-      "RelativePath": "CustomAuth.bundle.scp.css",
-      "AssetKind": "All",
-      "AssetMode": "Reference",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "ScopedCss",
-      "AssetTraitValue": "ProjectBundle",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "D:\\Microsoft Visual Studio Projects\\CustomAuth\\CustomAuth\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\CustomAuth.bundle.scp.css"
-    },
     {
       "Identity": "D:\\Microsoft Visual Studio Projects\\CustomAuth\\CustomAuth\\wwwroot\\css\\site.css",
       "SourceId": "CustomAuth",

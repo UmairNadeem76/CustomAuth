@@ -1,10 +1,6 @@
 {
   "Files": [
     {
-      "Id": "D:\\Microsoft Visual Studio Projects\\CustomAuth\\CustomAuth\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\CustomAuth.bundle.scp.css",
-      "PackagePath": "staticwebassets\\CustomAuth.bundle.scp.css"
-    },
-    {
       "Id": "D:\\Microsoft Visual Studio Projects\\CustomAuth\\CustomAuth\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
