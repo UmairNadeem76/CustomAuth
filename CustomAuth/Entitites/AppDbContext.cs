@@ -1,19 +1,26 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using CustomAuth.Entitites;
+using Microsoft.EntityFrameworkCore;
 
-namespace CustomAuth.Entitites
+public class AppDbContext : DbContext
 {
-	public class AppDbContext : DbContext
+	public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
 	{
-        public AppDbContext(DbContextOptions<AppDbContext>options) : base(options) 
-        {
+	}
 
-        }
+	public DbSet<UserAccount> UserAccounts { get; set; }
+	public DbSet<TaskList> TaskList { get; set; }
 
-        public DbSet<UserAccount> UserAccounts { get; set; }
+	protected override void OnModelCreating(ModelBuilder modelBuilder)
+	{
+		// Configure the primary key for TaskList
+		modelBuilder.Entity<TaskList>()
+			.HasKey(t => t.TaskID);
 
-		protected override void OnModelCreating(ModelBuilder modelBuilder)
-		{
-			base.OnModelCreating(modelBuilder);
-		}
+		// Configure the relationship between TaskList and UserAccount
+		modelBuilder.Entity<TaskList>()
+			.HasOne(t => t.User)
+			.WithMany()
+			.HasForeignKey(t => t.UserID)
+			.OnDelete(DeleteBehavior.Cascade);
 	}
 }

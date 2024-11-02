@@ -253,3 +253,4 @@ D:\Microsoft Visual Studio Projects\CustomAuth\CustomAuth\bin\Debug\net8.0\runti
 D:\Microsoft Visual Studio Projects\CustomAuth\CustomAuth\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Security.Cryptography.ProtectedData.dll
 D:\Microsoft Visual Studio Projects\CustomAuth\CustomAuth\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
 D:\Microsoft Visual Studio Projects\CustomAuth\CustomAuth\obj\Debug\net8.0\CustomAuth.sourcelink.json
+D:\Microsoft Visual Studio Projects\CustomAuth\CustomAuth\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
