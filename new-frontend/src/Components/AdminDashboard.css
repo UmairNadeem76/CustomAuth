@@ -106,5 +106,6 @@
 /* Optional: No tasks message styling */
 .user-tasks p {
     font-style: italic;
-    color: #95a5a6;
+    color: black;
+    font-weight: bold;
 }
