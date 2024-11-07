@@ -1,0 +1,54 @@
+/* Navbar.css */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #5a99e0;
+    padding: 1rem 2rem;
+    color: white;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 15px;
+}
+
+.navbar-title {
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: black;
+}
+
+/* Navigation Buttons */
+.nav-links button {
+    background: none;
+    color: white;
+    border: none;
+    border-bottom: 2px solid transparent;
+    /* Added transparent border */
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+    position: relative;
+    transition: color 0.3s, border-bottom 0.3s;
+    /* Include border-bottom in transition */
+}
+
+.nav-links button:hover {
+    color: #ffeb3b;
+}
+
+/* Active Button Styling */
+.nav-links button.active {
+    color: #ffeb3b;
+    font-weight: bold;
+    border-bottom: 2px solid #ffeb3b;
+}

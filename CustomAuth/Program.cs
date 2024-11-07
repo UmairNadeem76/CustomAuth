@@ -30,11 +30,13 @@ builder.Services.AddAuthentication(options =>
 	options.TokenValidationParameters = new TokenValidationParameters
 	{
 		ValidateIssuerSigningKey = true,
-		IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes("6567e69b55419b2c16b904595c5af62257603b577d1da3b0b6c60375ebbc7bf7bca9ab475b7c6782b7850e3e0311ed32cb0e4d0be9a2f2797ba5d7511e577293da09aa1a3d1cd261bf500d4efd65166cdbb9a752ffabe1c47b970e6336dec0ea24afd3e71bde5e2d0b9fddba56c09870f23ac67926b5e3f15b7b7b856fb3d751ffc7dca579d62c77f530006db3144400a99cf0f53c959a78eb6a2e5a391fca712b61708897bcd072e21524d577105fe3a1bffd658da6ec1cc13a32139713ed0322beb1ef38dbf03f86116ad600bf30e59785ed79f447307a76ab29bd9e504b71be8dead2d1466173e76d362e0c2d8b6c9b34b93040b6de39408469faabee9673")), // Use a secure and stored secret key
+		IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes("8DpE3PAHFEhVg5uOCzpqIDrxTy18XD9eJ+++XVyrbXAzYAIEpNltoUjEA3f+5G9X")), // Use a secure and stored secret key
 		ValidateIssuer = false,
 		ValidateAudience = false
 	};
 });
+
+
 
 // Configure CORS to allow specific origins, methods, and headers
 builder.Services.AddCors(options =>
@@ -48,6 +50,14 @@ builder.Services.AddCors(options =>
 				.AllowAnyHeader() // Allow any HTTP header
 				.AllowCredentials(); // Allow cookies and other credentials
 		});
+});
+
+builder.Services.AddAuthorization(options =>
+{
+	options.AddPolicy("AdminOnly", policy =>
+	{
+		policy.RequireRole("IsAdmin", "True");
+	});
 });
 
 // Add logging configuration for better error tracking
@@ -86,7 +96,7 @@ app.Use(async (context, next) =>
 	if (!string.IsNullOrEmpty(token))
 	{
 		var tokenHandler = new JwtSecurityTokenHandler();
-		var key = Encoding.ASCII.GetBytes("6567e69b55419b2c16b904595c5af62257603b577d1da3b0b6c60375ebbc7bf7bca9ab475b7c6782b7850e3e0311ed32cb0e4d0be9a2f2797ba5d7511e577293da09aa1a3d1cd261bf500d4efd65166cdbb9a752ffabe1c47b970e6336dec0ea24afd3e71bde5e2d0b9fddba56c09870f23ac67926b5e3f15b7b7b856fb3d751ffc7dca579d62c77f530006db3144400a99cf0f53c959a78eb6a2e5a391fca712b61708897bcd072e21524d577105fe3a1bffd658da6ec1cc13a32139713ed0322beb1ef38dbf03f86116ad600bf30e59785ed79f447307a76ab29bd9e504b71be8dead2d1466173e76d362e0c2d8b6c9b34b93040b6de39408469faabee9673");
+		var key = Encoding.ASCII.GetBytes("8DpE3PAHFEhVg5uOCzpqIDrxTy18XD9eJ+++XVyrbXAzYAIEpNltoUjEA3f+5G9X");
 
 		try
 		{
@@ -102,10 +112,13 @@ app.Use(async (context, next) =>
 			// Extract the UserID claim and add it to the context user claims
 			var jwtToken = (JwtSecurityToken)validatedToken;
 			var userId = jwtToken.Claims.First(x => x.Type == "UserID").Value;
+			var role = jwtToken.Claims.First(x => x.Type == "IsAdmin").Value;
+			Console.WriteLine("role is " + role);
 
 			var claims = new List<Claim>
 			{
-				new Claim(ClaimTypes.NameIdentifier, userId)
+				new Claim(ClaimTypes.NameIdentifier, userId),
+				new Claim(ClaimTypes.Role, role)
 			};
 			var identity = new ClaimsIdentity(claims, JwtBearerDefaults.AuthenticationScheme);
 			context.User.AddIdentity(identity);

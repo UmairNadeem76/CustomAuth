@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "D:\\Microsoft Visual Studio Projects\\CustomAuth\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1B17D78E-05F9-47C6-96C7-E95B2ECCE7D9}|CustomAuth\\CustomAuth.csproj|d:\\microsoft visual studio projects\\customauth\\customauth\\controllers\\taskcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1B17D78E-05F9-47C6-96C7-E95B2ECCE7D9}|CustomAuth\\CustomAuth.csproj|solutionrelative:customauth\\controllers\\taskcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1B17D78E-05F9-47C6-96C7-E95B2ECCE7D9}|CustomAuth\\CustomAuth.csproj|d:\\microsoft visual studio projects\\customauth\\customauth\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B17D78E-05F9-47C6-96C7-E95B2ECCE7D9}|CustomAuth\\CustomAuth.csproj|solutionrelative:customauth\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B17D78E-05F9-47C6-96C7-E95B2ECCE7D9}|CustomAuth\\CustomAuth.csproj|d:\\microsoft visual studio projects\\customauth\\customauth\\entitites\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B17D78E-05F9-47C6-96C7-E95B2ECCE7D9}|CustomAuth\\CustomAuth.csproj|solutionrelative:customauth\\entitites\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1B17D78E-05F9-47C6-96C7-E95B2ECCE7D9}|CustomAuth\\CustomAuth.csproj|d:\\microsoft visual studio projects\\customauth\\customauth\\models\\tasklist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -15,12 +19,12 @@
       "RelativeMoniker": "D:0:0:{1B17D78E-05F9-47C6-96C7-E95B2ECCE7D9}|CustomAuth\\CustomAuth.csproj|solutionrelative:customauth\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1B17D78E-05F9-47C6-96C7-E95B2ECCE7D9}|CustomAuth\\CustomAuth.csproj|d:\\microsoft visual studio projects\\customauth\\customauth\\entitites\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1B17D78E-05F9-47C6-96C7-E95B2ECCE7D9}|CustomAuth\\CustomAuth.csproj|solutionrelative:customauth\\entitites\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1B17D78E-05F9-47C6-96C7-E95B2ECCE7D9}|CustomAuth\\CustomAuth.csproj|d:\\microsoft visual studio projects\\customauth\\customauth\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B17D78E-05F9-47C6-96C7-E95B2ECCE7D9}|CustomAuth\\CustomAuth.csproj|solutionrelative:customauth\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1B17D78E-05F9-47C6-96C7-E95B2ECCE7D9}|CustomAuth\\CustomAuth.csproj|d:\\microsoft visual studio projects\\customauth\\customauth\\models\\taskcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1B17D78E-05F9-47C6-96C7-E95B2ECCE7D9}|CustomAuth\\CustomAuth.csproj|solutionrelative:customauth\\models\\taskcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1B17D78E-05F9-47C6-96C7-E95B2ECCE7D9}|CustomAuth\\CustomAuth.csproj|d:\\microsoft visual studio projects\\customauth\\customauth\\controllers\\taskcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B17D78E-05F9-47C6-96C7-E95B2ECCE7D9}|CustomAuth\\CustomAuth.csproj|solutionrelative:customauth\\controllers\\taskcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,37 +34,76 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "TaskCreateDto.cs",
-              "DocumentMoniker": "D:\\Microsoft Visual Studio Projects\\CustomAuth\\CustomAuth\\Models\\TaskCreateDto.cs",
-              "RelativeDocumentMoniker": "CustomAuth\\Models\\TaskCreateDto.cs",
-              "ToolTip": "D:\\Microsoft Visual Studio Projects\\CustomAuth\\CustomAuth\\Models\\TaskCreateDto.cs",
-              "RelativeToolTip": "CustomAuth\\Models\\TaskCreateDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAABAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "TaskList.cs",
+              "DocumentMoniker": "D:\\Microsoft Visual Studio Projects\\CustomAuth\\CustomAuth\\Models\\TaskList.cs",
+              "RelativeDocumentMoniker": "CustomAuth\\Models\\TaskList.cs",
+              "ToolTip": "D:\\Microsoft Visual Studio Projects\\CustomAuth\\CustomAuth\\Models\\TaskList.cs",
+              "RelativeToolTip": "CustomAuth\\Models\\TaskList.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-26T10:56:13.794Z",
+              "WhenOpened": "2024-11-06T13:50:55.301Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
+              "Title": "TaskController.cs",
+              "DocumentMoniker": "D:\\Microsoft Visual Studio Projects\\CustomAuth\\CustomAuth\\Controllers\\TaskController.cs",
+              "RelativeDocumentMoniker": "CustomAuth\\Controllers\\TaskController.cs",
+              "ToolTip": "D:\\Microsoft Visual Studio Projects\\CustomAuth\\CustomAuth\\Controllers\\TaskController.cs",
+              "RelativeToolTip": "CustomAuth\\Controllers\\TaskController.cs",
+              "ViewState": "AgIAAHMAAAAAAAAAAAAkwIMAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-04T09:55:01.341Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "D:\\Microsoft Visual Studio Projects\\CustomAuth\\CustomAuth\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "CustomAuth\\Controllers\\AdminController.cs",
+              "ToolTip": "D:\\Microsoft Visual Studio Projects\\CustomAuth\\CustomAuth\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "CustomAuth\\Controllers\\AdminController.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAswD8AAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-04T09:27:35.869Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "D:\\Microsoft Visual Studio Projects\\CustomAuth\\CustomAuth\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "CustomAuth\\Controllers\\AccountController.cs",
+              "ToolTip": "D:\\Microsoft Visual Studio Projects\\CustomAuth\\CustomAuth\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "CustomAuth\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAADoAAAAAAAAAAAAkwI4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-04T09:16:23.391Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Microsoft Visual Studio Projects\\CustomAuth\\CustomAuth\\Program.cs",
               "RelativeDocumentMoniker": "CustomAuth\\Program.cs",
               "ToolTip": "D:\\Microsoft Visual Studio Projects\\CustomAuth\\CustomAuth\\Program.cs",
               "RelativeToolTip": "CustomAuth\\Program.cs",
-              "ViewState": "AgIAAE4AAAAAAAAAAAAYwH8AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-20T18:19:58.052Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "D:\\Microsoft Visual Studio Projects\\CustomAuth\\CustomAuth\\Entitites\\AppDbContext.cs",
               "RelativeDocumentMoniker": "CustomAuth\\Entitites\\AppDbContext.cs",
@@ -69,32 +112,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-22T13:52:11.657Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "TaskList.cs",
-              "DocumentMoniker": "D:\\Microsoft Visual Studio Projects\\CustomAuth\\CustomAuth\\Models\\TaskList.cs",
-              "RelativeDocumentMoniker": "CustomAuth\\Models\\TaskList.cs",
-              "ToolTip": "D:\\Microsoft Visual Studio Projects\\CustomAuth\\CustomAuth\\Models\\TaskList.cs",
-              "RelativeToolTip": "CustomAuth\\Models\\TaskList.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-22T13:49:57.176Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "TaskController.cs",
-              "DocumentMoniker": "D:\\Microsoft Visual Studio Projects\\CustomAuth\\CustomAuth\\Controllers\\TaskController.cs",
-              "RelativeDocumentMoniker": "CustomAuth\\Controllers\\TaskController.cs",
-              "ToolTip": "D:\\Microsoft Visual Studio Projects\\CustomAuth\\CustomAuth\\Controllers\\TaskController.cs",
-              "RelativeToolTip": "CustomAuth\\Controllers\\TaskController.cs",
-              "ViewState": "AgIAADAAAAAAAAAAAAAawDQAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-22T13:48:36.682Z",
               "EditorCaption": ""
             }
           ]

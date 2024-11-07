@@ -52,6 +52,32 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "CustomAuth.Controllers.AdminController",
+    "Method": "GetAllUsers",
+    "RelativePath": "api/Admin/users",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CustomAuth.Controllers.AdminController",
+    "Method": "GetUserTasks",
+    "RelativePath": "api/Admin/users/{userId}/tasks",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "TaskController",
     "Method": "CreateTask",
     "RelativePath": "api/Task/create",

@@ -1,12 +1,15 @@
-import React, { useState } from 'react';
+//LoginSignup.tsx
+import React, { useContext, useState } from 'react';
 import { useForm, SubmitHandler, FieldErrors } from 'react-hook-form';
 import { z } from 'zod';
+import { useNavigate } from 'react-router-dom';
 import { zodResolver } from '@hookform/resolvers/zod';
 import './LoginSignup.css';
 import user_icon from '../Assets/person.png';
 import email_icon from '../Assets/email.png';
 import password_icon from '../Assets/password.png';
 import axios from 'axios';
+import { UserContext } from './UserContext';
 
 // Define the types for form data
 interface SignupFormData {
@@ -24,6 +27,8 @@ interface LoginFormData {
 
 const LoginSignup: React.FC = () => {
     const [action, setAction] = useState<'Signup' | 'Login'>("Signup");
+    const navigate = useNavigate();
+    const { user, setUser, fetchUserData } = useContext(UserContext);
 
     // Schema validation using zod
     const signupSchema = z.object({
@@ -69,16 +74,30 @@ const LoginSignup: React.FC = () => {
                     alert(`Signup Failed: ${response.data.message}`);
                 }
             } else {
-                const response = await axios.post('http://localhost:5191/api/account/login', {
-                    UserNameOrEmail: (data as LoginFormData).email,
-                    Password: (data as LoginFormData).password,
-                }, {
-                    withCredentials: true // Enable this if you are using cookies for authentication
-                });
-
+                const response = await axios.post(
+                    'http://localhost:5191/api/account/login',
+                    {
+                        UserNameOrEmail: (data as LoginFormData).email,
+                        Password: (data as LoginFormData).password,
+                    },
+                    {
+                        withCredentials: true,
+                    }
+                );
                 if (response.status === 200) {
                     alert('Login Successful');
-                } else {
+
+                    // Fetch user data
+                    const userData = await fetchUserData();
+
+                    // Redirect based on email
+                    if (userData?.email === 'admin@gmail.com') {
+                        navigate('/admindashboard');
+                    } else {
+                        navigate('/dashboard');
+                    }
+                }
+                else {
                     alert(`Login Failed: ${response.data.message}`);
                 }
             }

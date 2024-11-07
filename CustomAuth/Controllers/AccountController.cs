@@ -70,18 +70,23 @@ namespace CustomAuth.Controllers
 
 				if (user != null)
 				{
+					// Determine if the user is admin (UserID == 9)
+					bool isAdmin = user.ID == 9;
+
 					// Generate JWT token
 					var tokenHandler = new JwtSecurityTokenHandler();
-					var key = Encoding.ASCII.GetBytes("6567e69b55419b2c16b904595c5af62257603b577d1da3b0b6c60375ebbc7bf7bca9ab475b7c6782b7850e3e0311ed32cb0e4d0be9a2f2797ba5d7511e577293da09aa1a3d1cd261bf500d4efd65166cdbb9a752ffabe1c47b970e6336dec0ea24afd3e71bde5e2d0b9fddba56c09870f23ac67926b5e3f15b7b7b856fb3d751ffc7dca579d62c77f530006db3144400a99cf0f53c959a78eb6a2e5a391fca712b61708897bcd072e21524d577105fe3a1bffd658da6ec1cc13a32139713ed0322beb1ef38dbf03f86116ad600bf30e59785ed79f447307a76ab29bd9e504b71be8dead2d1466173e76d362e0c2d8b6c9b34b93040b6de39408469faabee9673"); // Use a secure and stored secret key
+					var key = Encoding.ASCII.GetBytes("8DpE3PAHFEhVg5uOCzpqIDrxTy18XD9eJ+++XVyrbXAzYAIEpNltoUjEA3f+5G9X"); // Use a secure secret key
 					var tokenDescriptor = new SecurityTokenDescriptor
 					{
-						Subject = new ClaimsIdentity(new Claim[]
+						Subject = new ClaimsIdentity(new[]
 						{
 					new Claim(ClaimTypes.Name, user.Email),
-					new Claim("UserID", user.ID.ToString())
-						}),
+					new Claim("UserID", user.ID.ToString()),
+					new Claim("IsAdmin", isAdmin.ToString()) // Add IsAdmin claim
+                }),
 						Expires = DateTime.UtcNow.AddHours(1),
-						SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+						SigningCredentials = new SigningCredentials(
+							new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
 					};
 					var token = tokenHandler.CreateToken(tokenDescriptor);
 					var tokenString = tokenHandler.WriteToken(token);
@@ -89,9 +94,9 @@ namespace CustomAuth.Controllers
 					// Store the JWT in a cookie
 					var cookieOptions = new CookieOptions
 					{
-						HttpOnly = true, // Prevent access to the cookie via client-side scripts
-						Secure = true,   // Ensure the cookie is only sent over HTTPS
-						Expires = DateTime.UtcNow.AddHours(1) // Set cookie expiration to match token expiration
+						HttpOnly = true,
+						Secure = true,
+						Expires = DateTime.UtcNow.AddHours(1)
 					};
 					Response.Cookies.Append("jwt", tokenString, cookieOptions);
 
@@ -104,6 +109,7 @@ namespace CustomAuth.Controllers
 			}
 			return BadRequest(ModelState);
 		}
+
 		[Authorize]
 		[HttpGet("userdata")]
 		public IActionResult GetUserData()
@@ -132,6 +138,21 @@ namespace CustomAuth.Controllers
 			user.Password = null; // Remove the password
 
 			return Ok(user);
+		}
+
+		[HttpPost("logout")]
+		public IActionResult Logout()
+		{
+			// Delete the JWT cookie by setting its expiration date to the past
+			Response.Cookies.Delete("jwt", new CookieOptions
+			{
+				HttpOnly = true,
+				Secure = true, // Ensure this matches how the cookie was originally set
+				SameSite = SameSiteMode.Strict,
+				Path = "/"
+			});
+
+			return Ok(new { Message = "Logout Successful" });
 		}
 	}
 }
