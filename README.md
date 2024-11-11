@@ -13,7 +13,7 @@
 Make Sure You Have The Following Installed On Your Machine:
 - .NET SDK (Version 6.0 or Later)
 - Node.js (Version 14.0 or Later)
-- NPM (Node Package Manager)
+- npm (Node Package Manager)
 - SQL Server (Or Other Preferred Database)
 
 ## Backend Setup
