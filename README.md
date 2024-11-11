@@ -79,8 +79,8 @@ Following Tech Stack is being implemented:
 - ASP.NET Core Web Api
 - SQL Server Management Studio for database
 - Redux for state management in React
-- Serilog for Application logging (to be implemented)
-- xUnit for unit testing (to be implemented)
+- Serilog for Application logging
+- xUnit for unit testing
 - SonarQube for analyzing code quality (to be implemented)
 
 ## Additional Information

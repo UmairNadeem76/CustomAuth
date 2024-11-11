@@ -9,8 +9,18 @@ using System.Text;
 using System.Security.Claims;
 using System.IdentityModel.Tokens.Jwt;
 using CustomAuth.Entitites;
+using Serilog; // Add Serilog
 
 var builder = WebApplication.CreateBuilder(args);
+
+// 1. Configure Serilog
+Log.Logger = new LoggerConfiguration()
+	.ReadFrom.Configuration(builder.Configuration) // Read configuration from appsettings.json
+	.Enrich.FromLogContext()
+	.CreateLogger();
+
+// 2. Replace the default logging with Serilog
+builder.Host.UseSerilog();
 
 // Configure services
 builder.Services.AddDbContext<AppDbContext>(options =>
@@ -36,8 +46,6 @@ builder.Services.AddAuthentication(options =>
 	};
 });
 
-
-
 // Configure CORS to allow specific origins, methods, and headers
 builder.Services.AddCors(options =>
 {
@@ -60,10 +68,11 @@ builder.Services.AddAuthorization(options =>
 	});
 });
 
-// Add logging configuration for better error tracking
-builder.Logging.ClearProviders();
-builder.Logging.AddConsole();
+// Remove the following lines since Serilog is now handling logging
+// builder.Logging.ClearProviders();
+// builder.Logging.AddConsole();
 
+// Build the app
 var app = builder.Build();
 
 // Configure the HTTP request pipeline
@@ -89,7 +98,10 @@ app.UseRouting();
 // Enable CORS before authentication and authorization
 app.UseCors("AllowAllOrigins");
 
-// Use custom middleware to extract UserID from the JWT and add it to the ClaimsPrincipal
+// 3. Use Serilog request logging
+app.UseSerilogRequestLogging();
+
+// Custom middleware to extract UserID from the JWT and add it to the ClaimsPrincipal
 app.Use(async (context, next) =>
 {
 	var token = context.Request.Cookies["jwt"];
@@ -109,11 +121,11 @@ app.Use(async (context, next) =>
 				ClockSkew = TimeSpan.Zero
 			}, out var validatedToken);
 
-			// Extract the UserID claim and add it to the context user claims
+			// Extract the UserID claim and role
 			var jwtToken = (JwtSecurityToken)validatedToken;
 			var userId = jwtToken.Claims.First(x => x.Type == "UserID").Value;
 			var role = jwtToken.Claims.First(x => x.Type == "IsAdmin").Value;
-			Console.WriteLine("role is " + role);
+			Log.Information("Role is {Role}", role);
 
 			var claims = new List<Claim>
 			{
@@ -123,9 +135,10 @@ app.Use(async (context, next) =>
 			var identity = new ClaimsIdentity(claims, JwtBearerDefaults.AuthenticationScheme);
 			context.User.AddIdentity(identity);
 		}
-		catch
+		catch (Exception ex)
 		{
 			// Token validation failed
+			Log.Error(ex, "Token validation failed for token: {Token}", token);
 		}
 	}
 
@@ -137,4 +150,16 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-app.Run();
+try
+{
+	Log.Information("Starting web host");
+	app.Run();
+}
+catch (Exception ex)
+{
+	Log.Fatal(ex, "Host terminated unexpectedly");
+}
+finally
+{
+	Log.CloseAndFlush();
+}

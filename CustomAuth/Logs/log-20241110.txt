@@ -1,0 +1,89 @@
+[2024-11-10 16:12:58 INF] Starting web host
+[2024-11-10 16:14:15 INF] Starting web host
+[2024-11-10 16:14:17 INF] HTTP GET / responded 404 in 815.2821 ms
+[2024-11-10 16:20:46 INF] Starting web host
+[2024-11-10 16:21:33 WRN] Failed to determine the https port for redirect.
+[2024-11-10 16:21:33 INF] HTTP GET /api/account/userdata responded 401 in 789.1601 ms
+[2024-11-10 16:21:33 INF] HTTP GET /api/account/userdata responded 401 in 1.8412 ms
+[2024-11-10 16:21:53 INF] Login attempt for umairnadeem779@gmail.com
+[2024-11-10 16:21:54 INF] User umairnadeem779@gmail.com authenticated successfully. IsAdmin: false
+[2024-11-10 16:21:54 INF] JWT token generated and stored for user umairnadeem779@gmail.com
+[2024-11-10 16:21:54 INF] HTTP POST /api/account/login responded 200 in 1713.1835 ms
+[2024-11-10 16:21:55 INF] Role is False
+[2024-11-10 16:21:55 INF] Authenticated user null is requesting userdata.
+[2024-11-10 16:21:55 INF] User data retrieved successfully for UserID: 1
+[2024-11-10 16:21:55 INF] HTTP GET /api/account/userdata responded 200 in 43.3048 ms
+[2024-11-10 16:21:55 INF] Role is False
+[2024-11-10 16:21:55 INF] Role is False
+[2024-11-10 16:21:55 INF] Authenticated user null is requesting userdata.
+[2024-11-10 16:21:55 INF] User data retrieved successfully for UserID: 1
+[2024-11-10 16:21:55 INF] HTTP GET /api/account/userdata responded 200 in 80.9313 ms
+[2024-11-10 16:21:55 INF] Role is False
+[2024-11-10 16:21:55 INF] Authenticated user null is requesting userdata.
+[2024-11-10 16:21:55 INF] User data retrieved successfully for UserID: 1
+[2024-11-10 16:21:55 INF] HTTP GET /api/account/userdata responded 200 in 3.9563 ms
+[2024-11-10 16:21:55 INF] HTTP GET /api/task/usertasks responded 200 in 118.6767 ms
+[2024-11-10 16:21:55 INF] Role is False
+[2024-11-10 16:21:55 INF] HTTP GET /api/task/usertasks responded 200 in 2.8976 ms
+[2024-11-10 16:22:21 INF] Role is False
+[2024-11-10 16:22:21 INF] HTTP GET /api/task/usertasks responded 200 in 4.0373 ms
+[2024-11-10 16:22:21 INF] Role is False
+[2024-11-10 16:22:21 INF] HTTP GET /api/task/usertasks responded 200 in 3.0082 ms
+[2024-11-10 16:22:22 INF] Role is False
+[2024-11-10 16:22:22 INF] Anonymous user is attempting to log out.
+[2024-11-10 16:22:22 INF] JWT cookie deleted for user null. Logout successful.
+[2024-11-10 16:22:22 INF] HTTP POST /api/account/logout responded 200 in 3.4423 ms
+[2024-11-10 16:22:22 INF] HTTP GET /api/account/userdata responded 401 in 0.1398 ms
+[2024-11-10 16:22:22 INF] HTTP GET /api/account/userdata responded 401 in 0.1853 ms
+[2024-11-10 16:22:22 INF] HTTP GET /api/account/userdata responded 401 in 0.1324 ms
+[2024-11-10 16:22:48 INF] Login attempt for admin@gmail.com
+[2024-11-10 16:22:48 INF] User admin@gmail.com authenticated successfully. IsAdmin: true
+[2024-11-10 16:22:48 INF] JWT token generated and stored for user admin@gmail.com
+[2024-11-10 16:22:48 INF] HTTP POST /api/account/login responded 200 in 7.6238 ms
+[2024-11-10 16:22:49 INF] Role is True
+[2024-11-10 16:22:49 INF] Authenticated user null is requesting userdata.
+[2024-11-10 16:22:49 INF] User data retrieved successfully for UserID: 9
+[2024-11-10 16:22:49 INF] HTTP GET /api/account/userdata responded 200 in 5.8818 ms
+[2024-11-10 16:22:49 INF] Role is True
+[2024-11-10 16:22:49 INF] Admin Unknown Admin requested all users.
+[2024-11-10 16:22:49 INF] Admin Unknown Admin retrieved 9 users.
+[2024-11-10 16:22:49 INF] HTTP GET /api/admin/users responded 200 in 21.7898 ms
+[2024-11-10 16:22:49 INF] Role is True
+[2024-11-10 16:22:49 INF] Admin Unknown Admin requested all users.
+[2024-11-10 16:22:49 INF] Admin Unknown Admin retrieved 9 users.
+[2024-11-10 16:22:49 INF] HTTP GET /api/admin/users responded 200 in 4.8111 ms
+[2024-11-10 16:22:58 INF] Role is True
+[2024-11-10 16:22:58 INF] Admin Unknown Admin requested tasks for UserID 4.
+[2024-11-10 16:22:58 INF] Admin Unknown Admin retrieved 0 tasks for UserID 4.
+[2024-11-10 16:22:58 INF] HTTP GET /api/admin/users/4/tasks responded 200 in 20.9544 ms
+[2024-11-10 16:22:58 INF] Role is True
+[2024-11-10 16:22:58 INF] Admin Unknown Admin requested tasks for UserID 7.
+[2024-11-10 16:22:58 INF] Admin Unknown Admin retrieved 0 tasks for UserID 7.
+[2024-11-10 16:22:58 INF] HTTP GET /api/admin/users/7/tasks responded 200 in 4.7388 ms
+[2024-11-10 16:22:59 INF] Role is True
+[2024-11-10 16:22:59 INF] Admin Unknown Admin requested tasks for UserID 8.
+[2024-11-10 16:22:59 INF] Admin Unknown Admin retrieved 1 tasks for UserID 8.
+[2024-11-10 16:22:59 INF] HTTP GET /api/admin/users/8/tasks responded 200 in 5.8189 ms
+[2024-11-10 16:23:06 INF] Role is True
+[2024-11-10 16:23:06 INF] Role is True
+[2024-11-10 16:23:06 INF] Authenticated user null is requesting userdata.
+[2024-11-10 16:23:06 INF] HTTP GET /api/task/usertasks responded 200 in 4.1735 ms
+[2024-11-10 16:23:06 INF] Role is True
+[2024-11-10 16:23:06 INF] User data retrieved successfully for UserID: 9
+[2024-11-10 16:23:06 INF] HTTP GET /api/task/usertasks responded 200 in 3.2355 ms
+[2024-11-10 16:23:06 INF] HTTP GET /api/account/userdata responded 200 in 8.4076 ms
+[2024-11-10 16:23:06 INF] Role is True
+[2024-11-10 16:23:06 INF] Authenticated user null is requesting userdata.
+[2024-11-10 16:23:06 INF] User data retrieved successfully for UserID: 9
+[2024-11-10 16:23:06 INF] HTTP GET /api/account/userdata responded 200 in 4.7767 ms
+[2024-11-10 16:23:07 INF] Role is True
+[2024-11-10 16:23:07 INF] HTTP GET /api/task/usertasks responded 200 in 3.0299 ms
+[2024-11-10 16:23:07 INF] Role is True
+[2024-11-10 16:23:07 INF] HTTP GET /api/task/usertasks responded 200 in 3.4441 ms
+[2024-11-10 16:23:08 INF] Role is True
+[2024-11-10 16:23:08 INF] Anonymous user is attempting to log out.
+[2024-11-10 16:23:08 INF] JWT cookie deleted for user null. Logout successful.
+[2024-11-10 16:23:08 INF] HTTP POST /api/account/logout responded 200 in 2.0197 ms
+[2024-11-10 16:23:08 INF] HTTP GET /api/account/userdata responded 401 in 0.2108 ms
+[2024-11-10 16:23:08 INF] HTTP GET /api/account/userdata responded 401 in 0.1545 ms
+[2024-11-10 16:23:08 INF] HTTP GET /api/account/userdata responded 401 in 0.1523 ms

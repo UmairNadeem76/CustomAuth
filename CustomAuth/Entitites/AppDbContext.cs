@@ -1,4 +1,5 @@
-﻿using CustomAuth.Entitites;
+﻿//AppDbContext.cs
+using CustomAuth.Entitites;
 using Microsoft.EntityFrameworkCore;
 
 public class AppDbContext : DbContext

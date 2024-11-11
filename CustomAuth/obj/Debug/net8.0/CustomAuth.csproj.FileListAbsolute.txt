@@ -254,3 +254,12 @@ D:\Microsoft Visual Studio Projects\CustomAuth\CustomAuth\bin\Debug\net8.0\runti
 D:\Microsoft Visual Studio Projects\CustomAuth\CustomAuth\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
 D:\Microsoft Visual Studio Projects\CustomAuth\CustomAuth\obj\Debug\net8.0\CustomAuth.sourcelink.json
 D:\Microsoft Visual Studio Projects\CustomAuth\CustomAuth\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Microsoft Visual Studio Projects\CustomAuth\CustomAuth\bin\Debug\net8.0\Serilog.dll
+D:\Microsoft Visual Studio Projects\CustomAuth\CustomAuth\bin\Debug\net8.0\Serilog.AspNetCore.dll
+D:\Microsoft Visual Studio Projects\CustomAuth\CustomAuth\bin\Debug\net8.0\Serilog.Extensions.Hosting.dll
+D:\Microsoft Visual Studio Projects\CustomAuth\CustomAuth\bin\Debug\net8.0\Serilog.Extensions.Logging.dll
+D:\Microsoft Visual Studio Projects\CustomAuth\CustomAuth\bin\Debug\net8.0\Serilog.Formatting.Compact.dll
+D:\Microsoft Visual Studio Projects\CustomAuth\CustomAuth\bin\Debug\net8.0\Serilog.Settings.Configuration.dll
+D:\Microsoft Visual Studio Projects\CustomAuth\CustomAuth\bin\Debug\net8.0\Serilog.Sinks.Console.dll
+D:\Microsoft Visual Studio Projects\CustomAuth\CustomAuth\bin\Debug\net8.0\Serilog.Sinks.Debug.dll
+D:\Microsoft Visual Studio Projects\CustomAuth\CustomAuth\bin\Debug\net8.0\Serilog.Sinks.File.dll

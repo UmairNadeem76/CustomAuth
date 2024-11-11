@@ -1,7 +1,9 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿// AdminController.cs
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using CustomAuth.Entitites;
 using System.Linq;
+using Serilog; // Add Serilog
 
 namespace CustomAuth.Controllers
 {
@@ -20,6 +22,9 @@ namespace CustomAuth.Controllers
 		[HttpGet("users")]
 		public IActionResult GetAllUsers()
 		{
+			var adminEmail = User.Identity?.Name ?? "Unknown Admin";
+			Log.Information("Admin {AdminEmail} requested all users.", adminEmail);
+
 			var users = _context.UserAccounts
 				.Select(u => new
 				{
@@ -32,16 +37,22 @@ namespace CustomAuth.Controllers
 				})
 				.ToList();
 
+			Log.Information("Admin {AdminEmail} retrieved {UserCount} users.", adminEmail, users.Count);
+
 			return Ok(users);
 		}
 
 		[HttpGet("users/{userId}/tasks")]
 		public IActionResult GetUserTasks(int userId)
 		{
+			var adminEmail = User.Identity?.Name ?? "Unknown Admin";
+			Log.Information("Admin {AdminEmail} requested tasks for UserID {UserId}.", adminEmail, userId);
+
 			// Verify that the user exists
 			var userExists = _context.UserAccounts.Any(u => u.ID == userId);
 			if (!userExists)
 			{
+				Log.Warning("Admin {AdminEmail} requested tasks for non-existent UserID {UserId}.", adminEmail, userId);
 				return NotFound(new { Message = $"User with ID {userId} not found." });
 			}
 
@@ -58,6 +69,8 @@ namespace CustomAuth.Controllers
 					// Exclude any sensitive fields
 				})
 				.ToList();
+
+			Log.Information("Admin {AdminEmail} retrieved {TaskCount} tasks for UserID {UserId}.", adminEmail, tasks.Count, userId);
 
 			return Ok(tasks);
 		}
