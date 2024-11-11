@@ -10,21 +10,21 @@
 - [Additional Information](#additional-information)
 
 ## Prerequisites
-Make sure you have the following installed on your machine:
-- .NET SDK (version 6.0 or later)
-- Node.js (version 14.0 or later)
-- npm (Node Package Manager)
-- SQL Server (or other preferred database)
+Make Sure You Have The Following Installed On Your Machine:
+- .NET SDK (Version 6.0 or Later)
+- Node.js (Version 14.0 or Later)
+- NPM (Node Package Manager)
+- SQL Server (Or Other Preferred Database)
 
 ## Backend Setup
-### 1. Clone the repository:
+### 1. Clone The Repository:
 ```bash
 git clone https://github.com/UmairNadeem76/Task-Management-System
 cd Task-Management-System
 ```
 
-### 2. Configure the database:
-- Update the `appsettings.json` file with your database connection string.
+### 2. Configure The Database:
+- Update The `appsettings.json` File With Your Database Connection String.
 - Example `appsettings.json`:
   ```json
   {
@@ -35,53 +35,53 @@ cd Task-Management-System
   }
   ```
 
-### 3. Run Entity Framework migrations:
+### 3. Run Entity Framework Migrations:
 ```bash
 cd CustomAuth
 dotnet ef migrations add InitialCreate
 dotnet ef database update
 ```
 
-### 4. Install dependencies:
+### 4. Install Dependencies:
 ```bash
 dotnet restore
 ```
 
-### 5. Running the Backend
+### 5. Running The Backend
 ```bash
 dotnet run
 ```
-The backend API will be available at `http://localhost:5191`
+The Backend API Will Be Available At `http://localhost:5191`
 
 
 ## Frontend Setup
-### 1. Navigate to the frontend directory:
+### 1. Navigate To The Frontend Directory:
 ```bash
 cd ../new-frontend
 ```
 
-### 2. Install dependencies:
+### 2. Install Dependencies:
 ```bash
 npm install
 ```
 
 
-### 3. Running the Frontend
+### 3. Running The Frontend
 ```bash
 npm start
 ```
-The frontend will be available at ` http://localhost:3000/`.
+The Frontend Will Be Available At `http://localhost:3000/`
 
 
 # Tech Stack:
-Following Tech Stack is being implemented:
-- React + Typescript for frontend
+Following Tech Stack Is Being Implemented:
+- React + Typescript For Frontend
 - ASP.NET Core Web Api
-- SQL Server Management Studio for database
-- Redux for state management in React
-- Serilog for Application logging
-- xUnit for unit testing
-- SonarQube for analyzing code quality (to be implemented)
+- SQL Server Management Studio For Database
+- Redux For State Management In React
+- Serilog For Application Logging
+- xUnit For Unit Testing
+- SonarQube For Analyzing Code Quality (To Be Implemented)
 
 ## Additional Information
 TBD
