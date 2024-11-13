@@ -1,0 +1,97 @@
+[2024-11-14 01:59:15 INF] Starting web host
+[2024-11-14 01:59:38 WRN] Failed to determine the https port for redirect.
+[2024-11-14 01:59:39 INF] HTTP GET /api/account/userdata responded 401 in 856.5171 ms
+[2024-11-14 01:59:39 INF] HTTP GET /api/account/userdata responded 401 in 1.9501 ms
+[2024-11-14 01:59:45 INF] Login attempt for umairnadeem779@gmail.com
+[2024-11-14 01:59:47 INF] User umairnadeem779@gmail.com authenticated successfully. IsAdmin: false
+[2024-11-14 01:59:47 INF] JWT token generated and stored for user umairnadeem779@gmail.com
+[2024-11-14 01:59:47 INF] HTTP POST /api/account/login responded 200 in 2278.7635 ms
+[2024-11-14 01:59:48 INF] Role is False
+[2024-11-14 01:59:48 INF] Authenticated user null is requesting userdata.
+[2024-11-14 01:59:48 INF] User data retrieved successfully for UserID: 1
+[2024-11-14 01:59:48 INF] HTTP GET /api/account/userdata responded 200 in 52.2353 ms
+[2024-11-14 01:59:48 INF] Role is False
+[2024-11-14 01:59:48 INF] Role is False
+[2024-11-14 01:59:48 INF] Authenticated user null is requesting userdata.
+[2024-11-14 01:59:48 INF] User data retrieved successfully for UserID: 1
+[2024-11-14 01:59:48 INF] HTTP GET /api/account/userdata responded 200 in 44.5242 ms
+[2024-11-14 01:59:48 INF] Role is False
+[2024-11-14 01:59:48 INF] Authenticated user null is requesting userdata.
+[2024-11-14 01:59:48 INF] User data retrieved successfully for UserID: 1
+[2024-11-14 01:59:48 INF] HTTP GET /api/account/userdata responded 200 in 3.6791 ms
+[2024-11-14 01:59:48 INF] HTTP GET /api/task/usertasks responded 200 in 104.2562 ms
+[2024-11-14 01:59:48 INF] Role is False
+[2024-11-14 01:59:48 INF] HTTP GET /api/task/usertasks responded 200 in 2.9308 ms
+[2024-11-14 01:59:50 INF] Role is False
+[2024-11-14 01:59:50 INF] HTTP GET /api/task/usertasks responded 200 in 3.0496 ms
+[2024-11-14 01:59:50 INF] Role is False
+[2024-11-14 01:59:50 INF] HTTP GET /api/task/usertasks responded 200 in 3.0457 ms
+[2024-11-14 01:59:51 INF] Role is False
+[2024-11-14 01:59:51 INF] Anonymous user is attempting to log out.
+[2024-11-14 01:59:51 INF] JWT cookie deleted for user null. Logout successful.
+[2024-11-14 01:59:51 INF] HTTP POST /api/account/logout responded 200 in 3.1993 ms
+[2024-11-14 01:59:51 INF] HTTP GET /api/account/userdata responded 401 in 0.1813 ms
+[2024-11-14 01:59:51 INF] HTTP GET /api/account/userdata responded 401 in 0.1842 ms
+[2024-11-14 01:59:51 INF] HTTP GET /api/account/userdata responded 401 in 0.1185 ms
+[2024-11-14 01:59:56 INF] Login attempt for admin@gmail.com
+[2024-11-14 01:59:56 INF] User admin@gmail.com authenticated successfully. IsAdmin: true
+[2024-11-14 01:59:56 INF] JWT token generated and stored for user admin@gmail.com
+[2024-11-14 01:59:56 INF] HTTP POST /api/account/login responded 200 in 5.0770 ms
+[2024-11-14 01:59:57 INF] Role is True
+[2024-11-14 01:59:57 INF] Authenticated user null is requesting userdata.
+[2024-11-14 01:59:57 INF] User data retrieved successfully for UserID: 9
+[2024-11-14 01:59:57 INF] HTTP GET /api/account/userdata responded 200 in 3.4796 ms
+[2024-11-14 01:59:57 INF] Role is True
+[2024-11-14 01:59:57 INF] Admin Unknown Admin requested all users.
+[2024-11-14 01:59:57 INF] Admin Unknown Admin retrieved 9 users.
+[2024-11-14 01:59:57 INF] HTTP GET /api/admin/users responded 200 in 29.3049 ms
+[2024-11-14 01:59:57 INF] Role is True
+[2024-11-14 01:59:57 INF] Admin Unknown Admin requested all users.
+[2024-11-14 01:59:57 INF] Admin Unknown Admin retrieved 9 users.
+[2024-11-14 01:59:57 INF] HTTP GET /api/admin/users responded 200 in 4.3150 ms
+[2024-11-14 02:00:00 INF] Role is True
+[2024-11-14 02:00:00 INF] Role is True
+[2024-11-14 02:00:00 INF] Authenticated user null is requesting userdata.
+[2024-11-14 02:00:00 INF] HTTP GET /api/task/usertasks responded 200 in 5.5803 ms
+[2024-11-14 02:00:00 INF] Role is True
+[2024-11-14 02:00:00 INF] User data retrieved successfully for UserID: 9
+[2024-11-14 02:00:00 INF] HTTP GET /api/account/userdata responded 200 in 9.7224 ms
+[2024-11-14 02:00:00 INF] HTTP GET /api/task/usertasks responded 200 in 3.0874 ms
+[2024-11-14 02:00:00 INF] Role is True
+[2024-11-14 02:00:00 INF] Authenticated user null is requesting userdata.
+[2024-11-14 02:00:00 INF] User data retrieved successfully for UserID: 9
+[2024-11-14 02:00:00 INF] HTTP GET /api/account/userdata responded 200 in 4.3786 ms
+[2024-11-14 02:00:00 INF] Role is True
+[2024-11-14 02:00:00 INF] HTTP GET /api/task/usertasks responded 200 in 2.3515 ms
+[2024-11-14 02:00:00 INF] Role is True
+[2024-11-14 02:00:00 INF] HTTP GET /api/task/usertasks responded 200 in 2.8221 ms
+[2024-11-14 02:00:02 INF] Role is True
+[2024-11-14 02:00:02 INF] Authenticated user null is requesting userdata.
+[2024-11-14 02:00:02 INF] Role is True
+[2024-11-14 02:00:02 INF] User data retrieved successfully for UserID: 9
+[2024-11-14 02:00:02 INF] HTTP GET /api/account/userdata responded 200 in 4.4182 ms
+[2024-11-14 02:00:02 INF] Role is True
+[2024-11-14 02:00:02 INF] HTTP GET /api/task/usertasks responded 200 in 3.2414 ms
+[2024-11-14 02:00:02 INF] Authenticated user null is requesting userdata.
+[2024-11-14 02:00:02 INF] Role is True
+[2024-11-14 02:00:02 INF] User data retrieved successfully for UserID: 9
+[2024-11-14 02:00:02 INF] HTTP GET /api/task/usertasks responded 200 in 3.7389 ms
+[2024-11-14 02:00:02 INF] HTTP GET /api/account/userdata responded 200 in 5.1039 ms
+[2024-11-14 02:00:02 INF] Role is True
+[2024-11-14 02:00:02 INF] Admin Unknown Admin requested all users.
+[2024-11-14 02:00:02 INF] Admin Unknown Admin retrieved 9 users.
+[2024-11-14 02:00:02 INF] HTTP GET /api/admin/users responded 200 in 5.2554 ms
+[2024-11-14 02:00:02 INF] Role is True
+[2024-11-14 02:00:02 INF] Admin Unknown Admin requested all users.
+[2024-11-14 02:00:02 INF] Admin Unknown Admin retrieved 9 users.
+[2024-11-14 02:00:02 INF] HTTP GET /api/admin/users responded 200 in 3.9184 ms
+[2024-11-14 02:00:03 INF] Role is True
+[2024-11-14 02:00:03 INF] Admin Unknown Admin requested tasks for UserID 8.
+[2024-11-14 02:00:03 INF] Admin Unknown Admin retrieved 1 tasks for UserID 8.
+[2024-11-14 02:00:03 INF] HTTP GET /api/admin/users/8/tasks responded 200 in 104.4746 ms
+[2024-11-14 02:00:05 INF] Role is True
+[2024-11-14 02:00:05 INF] Anonymous user is attempting to log out.
+[2024-11-14 02:00:05 INF] JWT cookie deleted for user null. Logout successful.
+[2024-11-14 02:00:05 INF] HTTP POST /api/account/logout responded 200 in 2.7269 ms
+[2024-11-14 02:00:06 INF] HTTP GET /api/account/userdata responded 401 in 0.2000 ms
+[2024-11-14 02:00:06 INF] HTTP GET /api/account/userdata responded 401 in 0.0914 ms

@@ -1,4 +1,8 @@
 // Navbar.tsx
+
+// This component renders the navigation bar of the application.
+// It displays different navigation options based on the user's authentication status and role.
+
 import React, { useContext, useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import './Navbar.css';
@@ -9,10 +13,10 @@ const Navbar: React.FC = () => {
     const location = useLocation();
     const { user, logout } = useContext(UserContext);
 
-    // State to track the active button
+    // State to track the active navigation button
     const [activeButton, setActiveButton] = useState<string>('');
 
-    // Update activeButton based on the current location
+    // Update activeButton based on the current URL path
     useEffect(() => {
         if (location.pathname === '/dashboard') {
             setActiveButton('dashboard');
@@ -27,11 +31,13 @@ const Navbar: React.FC = () => {
         }
     }, [location.pathname]);
 
+    // Handle navigation to different routes
     const handleNavigate = (path: string, buttonName: string) => {
         navigate(path);
         setActiveButton(buttonName);
     };
 
+    // Handle user logout
     const handleLogout = async () => {
         try {
             await logout(); // Call the logout function from UserContext
@@ -46,6 +52,7 @@ const Navbar: React.FC = () => {
         <nav className="navbar">
             {user && (
                 <div className="nav-links">
+                    {/* Show Admin Dashboard link if the user is an admin */}
                     {user.email === 'admin@gmail.com' && (
                         <button
                             onClick={() => handleNavigate('/admindashboard', 'admindashboard')}
@@ -54,18 +61,21 @@ const Navbar: React.FC = () => {
                             Admin Dashboard
                         </button>
                     )}
+                    {/* Dashboard Link */}
                     <button
                         onClick={() => handleNavigate('/dashboard', 'dashboard')}
                         className={activeButton === 'dashboard' ? 'active' : ''}
                     >
                         Dashboard
                     </button>
+                    {/* Task List Link */}
                     <button
                         onClick={() => handleNavigate('/tasks', 'tasks')}
                         className={activeButton === 'tasks' ? 'active' : ''}
                     >
                         Task List
                     </button>
+                    {/* Logout Button */}
                     <button
                         onClick={handleLogout}
                         className={activeButton === 'logout' ? 'active' : ''}
@@ -76,6 +86,7 @@ const Navbar: React.FC = () => {
             )}
             {!user && (
                 <div className="nav-links">
+                    {/* Login Link for unauthenticated users */}
                     <button
                         onClick={() => handleNavigate('/', 'login')}
                         className={activeButton === 'login' ? 'active' : ''}
@@ -84,6 +95,7 @@ const Navbar: React.FC = () => {
                     </button>
                 </div>
             )}
+            {/* Application Title */}
             <div className="navbar-title">Task Management System</div>
         </nav>
     );

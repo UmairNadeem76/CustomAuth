@@ -1,7 +1,13 @@
+// Tasks.tsx
+
+// This component fetches, displays, and manages tasks from the backend API.
+// It allows users to create, edit, delete, and update tasks, and ensures tasks are sorted by priority.
+
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './Tasks.css';
 
+// Define the Task interface to type the task data
 interface Task {
     taskID: number;
     task_Name: string;
@@ -11,34 +17,41 @@ interface Task {
 }
 
 const Tasks: React.FC = () => {
+    // State to store the list of tasks
     const [tasks, setTasks] = useState<Task[]>([]);
+    // State to store new task data during creation
     const [newTask, setNewTask] = useState({
         task_Name: '',
         task_Description: '',
         task_Status: 'Pending',
         task_Priority: 1,
     });
+    // State to track which task is being edited
     const [editTaskId, setEditTaskId] = useState<number | null>(null);
+    // State to store the data of the task being edited
     const [editTaskData, setEditTaskData] = useState<Partial<Task>>({});
+    // State to handle and display error messages
     const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-    // Helper function to sort tasks by priority
+    // Helper function to sort tasks by priority (ascending order)
     const sortTasks = (tasksArray: Task[]) => {
         return tasksArray.sort((a, b) => a.task_Priority - b.task_Priority);
     };
 
+    // Fetch tasks from the backend API when the component mounts
     useEffect(() => {
         axios
             .get<Task[]>('http://localhost:5191/api/task/usertasks', { withCredentials: true })
             .then((response) => {
                 const sortedTasks = sortTasks(response.data);
-                setTasks(sortedTasks);
+                setTasks(sortedTasks); // Update tasks state with sorted tasks
             })
             .catch((error) => console.error('Error Fetching Tasks:', error));
     }, []);
 
+    // Handle the creation of a new task
     const handleCreateTask = () => {
-        // Validation
+        // Validation to ensure all fields are filled and priority is valid
         if (
             !newTask.task_Name ||
             !newTask.task_Description ||
@@ -46,40 +59,40 @@ const Tasks: React.FC = () => {
             !newTask.task_Priority ||
             newTask.task_Priority < 1
         ) {
-            setErrorMessage(
-                'All Fields Are Mandatory!'
-            );
+            setErrorMessage('All Fields Are Mandatory!');
             return;
         }
 
         axios
             .post('http://localhost:5191/api/task/create', newTask, { withCredentials: true })
             .then(() => {
-                // Fetch the updated task list
+                // After creating the task, fetch the updated task list
                 return axios.get('http://localhost:5191/api/task/usertasks', { withCredentials: true });
             })
             .then((response) => {
                 const sortedTasks = sortTasks(response.data);
-                setTasks(sortedTasks);
+                setTasks(sortedTasks); // Update tasks state with new list
+                // Reset newTask state to clear the form
                 setNewTask({
                     task_Name: '',
                     task_Description: '',
                     task_Status: 'Pending',
                     task_Priority: 1,
                 });
-                setErrorMessage(null);
+                setErrorMessage(null); // Clear any error messages
             })
             .catch((error) => console.error('Error Creating Task:', error));
     };
 
+    // Handle updating an existing task
     const handleEditTask = (taskId: number) => {
-        // Prepare updated task data
+        // Prepare updated task data by merging existing task data with edited data
         const updatedTaskData = {
             ...tasks.find((task) => task.taskID === taskId),
             ...editTaskData,
         };
 
-        // Validation
+        // Validation to ensure all fields are filled and priority is valid
         if (
             !updatedTaskData.task_Name ||
             !updatedTaskData.task_Description ||
@@ -87,31 +100,32 @@ const Tasks: React.FC = () => {
             !updatedTaskData.task_Priority ||
             updatedTaskData.task_Priority < 1
         ) {
-            setErrorMessage(
-                'All Fields Are Mandatory!'
-            );
+            setErrorMessage('All Fields Are Mandatory!');
             return;
         }
 
         axios
             .put(`http://localhost:5191/api/task/update/${taskId}`, editTaskData, { withCredentials: true })
             .then(() => {
+                // Update the tasks state with the edited task
                 const updatedTasks = tasks.map((task) =>
                     task.taskID === taskId ? { ...task, ...editTaskData } : task
                 );
                 const sortedTasks = sortTasks(updatedTasks);
-                setTasks(sortedTasks);
-                setEditTaskId(null);
-                setEditTaskData({});
+                setTasks(sortedTasks); // Update tasks state with sorted tasks
+                setEditTaskId(null); // Exit editing mode
+                setEditTaskData({}); // Reset editTaskData state
                 setErrorMessage(null); // Clear error message on success
             })
             .catch((error) => console.error('Error Updating Task:', error));
     };
 
+    // Handle deleting a task
     const handleDeleteTask = (taskId: number) => {
         axios
             .delete(`http://localhost:5191/api/task/delete/${taskId}`, { withCredentials: true })
             .then(() => {
+                // Remove the deleted task from the tasks state
                 const updatedTasks = tasks.filter((task) => task.taskID !== taskId);
                 setTasks(updatedTasks);
             })
@@ -122,7 +136,7 @@ const Tasks: React.FC = () => {
         <div className="tasks-container">
             <h1>Tasks</h1>
 
-            {/* Create Task Form */}
+            {/* Form to create a new task */}
             <div className="task-form">
                 <input
                     type="text"
@@ -161,16 +175,18 @@ const Tasks: React.FC = () => {
                         })
                     }
                 />
+                {/* Button to create the task */}
                 <button onClick={handleCreateTask}>Create Task</button>
-                {/* Error Message */}
+                {/* Display error message if any */}
                 {errorMessage && <p className="error-message">{errorMessage}</p>}
             </div>
 
-            {/* Task List */}
+            {/* Display the list of tasks */}
             <ul className="task-list">
                 {tasks.map((task) => (
                     <li key={task.taskID} className="task-item">
                         {editTaskId === task.taskID ? (
+                            // If the task is being edited, show editable inputs
                             <div>
                                 <input
                                     type="text"
@@ -219,6 +235,7 @@ const Tasks: React.FC = () => {
                                         })
                                     }
                                 />
+                                {/* Buttons to save or cancel the edit */}
                                 <button onClick={() => handleEditTask(task.taskID)}>Save</button>
                                 <button
                                     onClick={() => {
@@ -229,15 +246,17 @@ const Tasks: React.FC = () => {
                                 >
                                     Cancel
                                 </button>
-                                {/* Error Message */}
+                                {/* Display error message if any */}
                                 {errorMessage && <p className="error-message">{errorMessage}</p>}
                             </div>
                         ) : (
+                            // Display the task details
                             <div>
                                 <h3>{task.task_Name}</h3>
                                 <p>{task.task_Description}</p>
                                 <p>Status: {task.task_Status}</p>
                                 <p>Priority: {task.task_Priority}</p>
+                                {/* Buttons to edit or delete the task */}
                                 <button
                                     onClick={() => {
                                         setEditTaskId(task.taskID);
