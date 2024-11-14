@@ -81,7 +81,7 @@ Following Tech Stack Is Being Implemented:
 - Redux For State Management In React
 - Serilog For Application Logging
 - xUnit For Unit Testing
-- SonarQube For Analyzing Code Quality (To Be Implemented)
+- SonarQube For Analyzing Code Quality
 
 ## Additional Information
 TBD
