@@ -263,3 +263,5 @@ D:\Microsoft Visual Studio Projects\CustomAuth\CustomAuth\bin\Debug\net8.0\Seril
 D:\Microsoft Visual Studio Projects\CustomAuth\CustomAuth\bin\Debug\net8.0\Serilog.Sinks.Console.dll
 D:\Microsoft Visual Studio Projects\CustomAuth\CustomAuth\bin\Debug\net8.0\Serilog.Sinks.Debug.dll
 D:\Microsoft Visual Studio Projects\CustomAuth\CustomAuth\bin\Debug\net8.0\Serilog.Sinks.File.dll
+D:\Microsoft Visual Studio Projects\CustomAuth\CustomAuth\bin\Debug\net8.0\BCrypt.Net-Next.dll
+D:\Microsoft Visual Studio Projects\CustomAuth\CustomAuth\bin\Debug\net8.0\BouncyCastle.Crypto.dll

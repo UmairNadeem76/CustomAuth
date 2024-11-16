@@ -1,23 +1,28 @@
 ﻿// TaskController.cs
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Collections.Generic;
-using CustomAuth.Entitites;
-using System.Diagnostics;
-using System.Security.Claims;
-using CustomAuth.Models;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
 
+// Importing required namespaces for managing API requests, authorization, database interactions, and other functionalities
+using Microsoft.AspNetCore.Authorization; // To secure endpoints with authorization policies
+using Microsoft.AspNetCore.Mvc; // To define the controller and handle HTTP requests
+using System.Linq; // For LINQ queries
+using System.Threading.Tasks; // For asynchronous programming
+using System.Collections.Generic; // To handle collections like Dictionary
+using CustomAuth.Entitites; // Custom-defined entities for database operations
+using System.Diagnostics; // (Unused in this file but could be removed if not needed)
+using System.Security.Claims; // For extracting user claims from authentication tokens
+using CustomAuth.Models; // For data transfer objects (DTOs)
+using Microsoft.EntityFrameworkCore; // For database interaction and queries
+using Microsoft.IdentityModel.Tokens; // (Unused in this file but could be removed if not needed)
+
+// Setting up the API route and applying authorization to secure the controller
 [ApiController]
 [Route("api/[controller]")]
-[Authorize] // Protect all actions in this controller
+[Authorize] // Ensures all actions are accessible only to authenticated users
 public class TaskController : ControllerBase
 {
+	// Dependency injection for the database context
 	private readonly AppDbContext _context;
 
+	// Constructor to initialize the database context
 	public TaskController(AppDbContext context)
 	{
 		_context = context;
@@ -27,33 +32,35 @@ public class TaskController : ControllerBase
 	[HttpPost("create")]
 	public async Task<IActionResult> CreateTask([FromBody] TaskCreateDto newTaskDto)
 	{
+		// Extract the UserID from the authenticated user's claims
 		var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);
 		if (userIdClaim == null)
 		{
 			return Unauthorized("UserID not found in the token.");
 		}
 
-		// Map DTO to entity
+		// Map the data from the DTO to the TaskList entity
 		var newTask = new TaskList
 		{
 			Task_Name = newTaskDto.Task_Name,
 			Task_Description = newTaskDto.Task_Description,
 			Task_Status = newTaskDto.Task_Status,
 			Task_Priority = newTaskDto.Task_Priority,
-			UserID = int.Parse(userIdClaim.Value)
+			UserID = int.Parse(userIdClaim.Value) // Associate the task with the authenticated user
 		};
 
+		// Add the new task to the database and save changes asynchronously
 		_context.TaskList.Add(newTask);
 		await _context.SaveChangesAsync();
 
 		return Ok(new { Message = "Task Created Successfully" });
 	}
 
-	// 2. Update a task (name, description, status, priority)
+	// 2. Update an existing task
 	[HttpPut("update/{taskId}")]
 	public async Task<IActionResult> UpdateTask(int taskId, [FromBody] Dictionary<string, object> updatedFields)
 	{
-		// Get the UserID of the authenticated user
+		// Extract the UserID from the authenticated user's claims
 		var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);
 		if (userIdClaim == null || !int.TryParse(userIdClaim.Value, out int userId))
 		{
@@ -68,13 +75,13 @@ public class TaskController : ControllerBase
 			return NotFound("Task not found.");
 		}
 
-		// Check if the task belongs to the authenticated user
+		// Ensure the task belongs to the authenticated user
 		if (task.UserID != userId)
 		{
 			return Forbid("You do not have permission to update this task.");
 		}
 
-		// Update the task properties based on the provided fields
+		// Update task properties based on the provided fields
 		foreach (var field in updatedFields)
 		{
 			switch (field.Key.ToLower())
@@ -99,12 +106,12 @@ public class TaskController : ControllerBase
 					}
 					break;
 				default:
-					// Ignore unknown fields or handle as needed
+					// Ignore unknown fields
 					break;
 			}
 		}
 
-		// Save changes to the database
+		// Save changes to the database asynchronously
 		await _context.SaveChangesAsync();
 
 		return Ok(new { Message = "Task updated successfully." });
@@ -122,17 +129,18 @@ public class TaskController : ControllerBase
 			return NotFound("Task Not Found.");
 		}
 
-		// Delete the task
-		_context.TaskList.Remove(task);
+		// Soft delete the task by setting its isDeleted flag to true
+		task.isDeleted = true;
 		await _context.SaveChangesAsync();
 
 		return Ok(new { Message = "Task Deleted Successfully." });
 	}
 
+	// 4. Retrieve all tasks for the authenticated user
 	[HttpGet("usertasks")]
 	public async Task<IActionResult> GetUserTasks()
 	{
-		// Extract the UserID from the claims
+		// Extract the UserID from the authenticated user's claims
 		var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);
 		if (userIdClaim == null)
 		{
@@ -145,9 +153,9 @@ public class TaskController : ControllerBase
 			return Unauthorized("Invalid user ID");
 		}
 
-		// Fetch tasks associated with the user
+		// Fetch tasks that belong to the user and are not deleted
 		var userTasks = await _context.TaskList
-			.Where(t => t.UserID == userId)
+			.Where(t => t.UserID == userId && !t.isDeleted)
 			.ToListAsync();
 
 		return Ok(userTasks);

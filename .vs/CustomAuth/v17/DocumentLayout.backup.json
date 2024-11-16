@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "D:\\Microsoft Visual Studio Projects\\CustomAuth\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A50446DD-70C6-4CD6-BF60-ED0E5F1FF864}|CustomAuth.Tests\\CustomAuth.Tests.csproj|d:\\microsoft visual studio projects\\customauth\\customauth.tests\\controllers\\admincontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A50446DD-70C6-4CD6-BF60-ED0E5F1FF864}|CustomAuth.Tests\\CustomAuth.Tests.csproj|solutionrelative:customauth.tests\\controllers\\admincontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1B17D78E-05F9-47C6-96C7-E95B2ECCE7D9}|CustomAuth\\CustomAuth.csproj|d:\\microsoft visual studio projects\\customauth\\customauth\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B17D78E-05F9-47C6-96C7-E95B2ECCE7D9}|CustomAuth\\CustomAuth.csproj|solutionrelative:customauth\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A50446DD-70C6-4CD6-BF60-ED0E5F1FF864}|CustomAuth.Tests\\CustomAuth.Tests.csproj|d:\\microsoft visual studio projects\\customauth\\customauth.tests\\controllers\\taskcontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A50446DD-70C6-4CD6-BF60-ED0E5F1FF864}|CustomAuth.Tests\\CustomAuth.Tests.csproj|solutionrelative:customauth.tests\\controllers\\taskcontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1B17D78E-05F9-47C6-96C7-E95B2ECCE7D9}|CustomAuth\\CustomAuth.csproj|d:\\microsoft visual studio projects\\customauth\\customauth\\services\\passwordservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B17D78E-05F9-47C6-96C7-E95B2ECCE7D9}|CustomAuth\\CustomAuth.csproj|solutionrelative:customauth\\services\\passwordservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A50446DD-70C6-4CD6-BF60-ED0E5F1FF864}|CustomAuth.Tests\\CustomAuth.Tests.csproj|d:\\microsoft visual studio projects\\customauth\\customauth.tests\\controllers\\accountcontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A50446DD-70C6-4CD6-BF60-ED0E5F1FF864}|CustomAuth.Tests\\CustomAuth.Tests.csproj|solutionrelative:customauth.tests\\controllers\\accountcontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1B17D78E-05F9-47C6-96C7-E95B2ECCE7D9}|CustomAuth\\CustomAuth.csproj|d:\\microsoft visual studio projects\\customauth\\customauth\\models\\registrationviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B17D78E-05F9-47C6-96C7-E95B2ECCE7D9}|CustomAuth\\CustomAuth.csproj|solutionrelative:customauth\\models\\registrationviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B17D78E-05F9-47C6-96C7-E95B2ECCE7D9}|CustomAuth\\CustomAuth.csproj|d:\\microsoft visual studio projects\\customauth\\customauth\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B17D78E-05F9-47C6-96C7-E95B2ECCE7D9}|CustomAuth\\CustomAuth.csproj|solutionrelative:customauth\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,40 +30,54 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "TaskControllerTests.cs",
-              "DocumentMoniker": "D:\\Microsoft Visual Studio Projects\\CustomAuth\\CustomAuth.Tests\\Controllers\\TaskControllerTests.cs",
-              "RelativeDocumentMoniker": "CustomAuth.Tests\\Controllers\\TaskControllerTests.cs",
-              "ToolTip": "D:\\Microsoft Visual Studio Projects\\CustomAuth\\CustomAuth.Tests\\Controllers\\TaskControllerTests.cs",
-              "RelativeToolTip": "CustomAuth.Tests\\Controllers\\TaskControllerTests.cs",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAowFsAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "RegistrationViewModel.cs",
+              "DocumentMoniker": "D:\\Microsoft Visual Studio Projects\\CustomAuth\\CustomAuth\\Models\\RegistrationViewModel.cs",
+              "RelativeDocumentMoniker": "CustomAuth\\Models\\RegistrationViewModel.cs",
+              "ToolTip": "D:\\Microsoft Visual Studio Projects\\CustomAuth\\CustomAuth\\Models\\RegistrationViewModel.cs",
+              "RelativeToolTip": "CustomAuth\\Models\\RegistrationViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-10T16:37:38.264Z",
+              "WhenOpened": "2024-11-16T12:58:49.696Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AccountControllerTests.cs",
-              "DocumentMoniker": "D:\\Microsoft Visual Studio Projects\\CustomAuth\\CustomAuth.Tests\\Controllers\\AccountControllerTests.cs",
-              "RelativeDocumentMoniker": "CustomAuth.Tests\\Controllers\\AccountControllerTests.cs",
-              "ToolTip": "D:\\Microsoft Visual Studio Projects\\CustomAuth\\CustomAuth.Tests\\Controllers\\AccountControllerTests.cs",
-              "RelativeToolTip": "CustomAuth.Tests\\Controllers\\AccountControllerTests.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAmAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Microsoft Visual Studio Projects\\CustomAuth\\CustomAuth\\Program.cs",
+              "RelativeDocumentMoniker": "CustomAuth\\Program.cs",
+              "ToolTip": "D:\\Microsoft Visual Studio Projects\\CustomAuth\\CustomAuth\\Program.cs",
+              "RelativeToolTip": "CustomAuth\\Program.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAvwDwAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-10T16:30:49.514Z"
+              "WhenOpened": "2024-11-16T12:55:34.251Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "AdminControllerTests.cs",
-              "DocumentMoniker": "D:\\Microsoft Visual Studio Projects\\CustomAuth\\CustomAuth.Tests\\Controllers\\AdminControllerTests.cs",
-              "RelativeDocumentMoniker": "CustomAuth.Tests\\Controllers\\AdminControllerTests.cs",
-              "ToolTip": "D:\\Microsoft Visual Studio Projects\\CustomAuth\\CustomAuth.Tests\\Controllers\\AdminControllerTests.cs",
-              "RelativeToolTip": "CustomAuth.Tests\\Controllers\\AdminControllerTests.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAmAAAAAAAAAA==",
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "D:\\Microsoft Visual Studio Projects\\CustomAuth\\CustomAuth\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "CustomAuth\\Controllers\\AccountController.cs",
+              "ToolTip": "D:\\Microsoft Visual Studio Projects\\CustomAuth\\CustomAuth\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "CustomAuth\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAcwFwAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-10T16:30:50.429Z",
+              "WhenOpened": "2024-11-16T12:22:02.845Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PasswordService.cs",
+              "DocumentMoniker": "D:\\Microsoft Visual Studio Projects\\CustomAuth\\CustomAuth\\Services\\PasswordService.cs",
+              "RelativeDocumentMoniker": "CustomAuth\\Services\\PasswordService.cs",
+              "ToolTip": "D:\\Microsoft Visual Studio Projects\\CustomAuth\\CustomAuth\\Services\\PasswordService.cs",
+              "RelativeToolTip": "CustomAuth\\Services\\PasswordService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-16T12:19:03.973Z",
               "EditorCaption": ""
             }
           ]

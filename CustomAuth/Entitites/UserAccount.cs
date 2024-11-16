@@ -1,36 +1,43 @@
-﻿//UserAccounts.cs
-using System.ComponentModel.DataAnnotations;
-using Microsoft.EntityFrameworkCore;
+﻿// UserAccounts.cs
 
-namespace CustomAuth.Entitites
+// Importing required namespaces
+using System.ComponentModel.DataAnnotations; // For defining data annotations
+using Microsoft.EntityFrameworkCore; // For database-related configurations, such as indexes
+
+namespace CustomAuth.Entitites // Namespace for entity definitions
 {
-
-	[Index(nameof(Email), IsUnique = true)]
-	[Index(nameof(UserName), IsUnique = true)]
-
+	// Applying database indexes to ensure unique constraints
+	[Index(nameof(Email), IsUnique = true)] // Ensures the Email field is unique in the database
+	[Index(nameof(UserName), IsUnique = true)] // Ensures the UserName field is unique in the database
 	public class UserAccount
 	{
+		// Primary Key for the UserAccount table
 		[Key]
 		public int ID { get; set; }
 
-		[Required (ErrorMessage = "First Name Is Required")]
-		[MaxLength (50, ErrorMessage = "Max 50 Characters Allowed")]
+		// FirstName field with validation attributes
+		[Required(ErrorMessage = "First Name Is Required")] // Field is mandatory
+		[MaxLength(50, ErrorMessage = "Max 50 Characters Allowed")] // Restricts length to 50 characters
 		public string FirstName { get; set; }
 
-		[Required(ErrorMessage = "Last Name Is Required")]
-		[MaxLength(50, ErrorMessage = "Max 50 Characters Allowed")]
+		// LastName field with validation attributes
+		[Required(ErrorMessage = "Last Name Is Required")] // Field is mandatory
+		[MaxLength(50, ErrorMessage = "Max 50 Characters Allowed")] // Restricts length to 50 characters
 		public string LastName { get; set; }
 
-		[Required(ErrorMessage = "Email Is Required")]
-		[MaxLength(100, ErrorMessage = "Max 100 Characters Allowed")]
+		// Email field with validation attributes
+		[Required(ErrorMessage = "Email Is Required")] // Field is mandatory
+		[MaxLength(100, ErrorMessage = "Max 100 Characters Allowed")] // Restricts length to 100 characters
 		public string Email { get; set; }
 
-		[Required(ErrorMessage = "Username Is Required")]
-		[MaxLength(20, ErrorMessage = "Max 20 Characters Allowed")]
+		// UserName field with validation attributes
+		[Required(ErrorMessage = "Username Is Required")] // Field is mandatory
+		[MaxLength(20, ErrorMessage = "Max 20 Characters Allowed")] // Restricts length to 20 characters
 		public string UserName { get; set; }
 
-		[Required(ErrorMessage = "Password Is Required")]
-		[MaxLength(20, ErrorMessage = "Max 20 Characters Allowed")]
+		// Password field with validation attributes
+		[Required(ErrorMessage = "Password Is Required")] // Field is mandatory
+		[MaxLength(20, ErrorMessage = "Max 20 Characters Allowed")] // Restricts length to 20 characters
 		public string Password { get; set; }
 	}
 }

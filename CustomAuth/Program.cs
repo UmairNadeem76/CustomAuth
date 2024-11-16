@@ -1,35 +1,38 @@
 // Program.cs
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using System.Text;
-using System.Security.Claims;
-using System.IdentityModel.Tokens.Jwt;
-using CustomAuth.Entitites;
-using Serilog; // Add Serilog
 
+// Importing required namespaces
+using Microsoft.AspNetCore.Authentication.JwtBearer; // For configuring JWT authentication
+using Microsoft.EntityFrameworkCore; // For database context and interactions
+using Microsoft.IdentityModel.Tokens; // For token validation parameters
+using Microsoft.AspNetCore.Builder; // For building the web application
+using Microsoft.Extensions.DependencyInjection; // For adding services to the dependency injection container
+using Microsoft.Extensions.Hosting; // For environment-specific configurations
+using System.Text; // For encoding the secret key
+using System.Security.Claims; // For handling claims-based authentication
+using System.IdentityModel.Tokens.Jwt; // For handling JWT tokens
+using CustomAuth.Entitites; // For custom entities like `AppDbContext`
+using Serilog; // For logging
+
+// Create a builder for configuring and building the application
 var builder = WebApplication.CreateBuilder(args);
 
-// 1. Configure Serilog
+// 1. Configure Serilog as the logging provider
 Log.Logger = new LoggerConfiguration()
 	.ReadFrom.Configuration(builder.Configuration) // Read configuration from appsettings.json
-	.Enrich.FromLogContext()
+	.Enrich.FromLogContext() // Add contextual information to logs
 	.CreateLogger();
 
-// 2. Replace the default logging with Serilog
+// Replace the default logging with Serilog
 builder.Host.UseSerilog();
 
-// Configure services
+// Configure database context with SQL Server
 builder.Services.AddDbContext<AppDbContext>(options =>
 	options.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
 
-// Add services to the container
+// Add MVC controllers to the service container
 builder.Services.AddControllers();
 
-// Configure authentication to use JWT Bearer
+// Configure JWT-based authentication
 builder.Services.AddAuthentication(options =>
 {
 	options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -39,10 +42,10 @@ builder.Services.AddAuthentication(options =>
 {
 	options.TokenValidationParameters = new TokenValidationParameters
 	{
-		ValidateIssuerSigningKey = true,
-		IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes("8DpE3PAHFEhVg5uOCzpqIDrxTy18XD9eJ+++XVyrbXAzYAIEpNltoUjEA3f+5G9X")), // Use a secure and stored secret key
-		ValidateIssuer = false,
-		ValidateAudience = false
+		ValidateIssuerSigningKey = true, // Ensure the token has a valid signing key
+		IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes("8DpE3PAHFEhVg5uOCzpqIDrxTy18XD9eJ+++XVyrbXAzYAIEpNltoUjEA3f+5G9X")), // Secret key
+		ValidateIssuer = false, // Skip issuer validation
+		ValidateAudience = false // Skip audience validation
 	};
 });
 
@@ -53,58 +56,50 @@ builder.Services.AddCors(options =>
 		policyBuilder =>
 		{
 			policyBuilder
-				.WithOrigins("http://localhost:3000") // Allow specified origin
-				.AllowAnyMethod() // Allow any HTTP method (GET, POST, etc.)
-				.AllowAnyHeader() // Allow any HTTP header
-				.AllowCredentials(); // Allow cookies and other credentials
+				.WithOrigins("http://localhost:3000") // Allow requests from this origin
+				.AllowAnyMethod() // Allow all HTTP methods
+				.AllowAnyHeader() // Allow all headers
+				.AllowCredentials(); // Allow cookies and credentials
 		});
 });
 
+// Configure authorization policies
 builder.Services.AddAuthorization(options =>
 {
 	options.AddPolicy("AdminOnly", policy =>
 	{
-		policy.RequireRole("IsAdmin", "True");
+		policy.RequireRole("IsAdmin", "True"); // Require a role claim indicating admin access
 	});
 });
 
-// Remove the following lines since Serilog is now handling logging
-// builder.Logging.ClearProviders();
-// builder.Logging.AddConsole();
-
-// Build the app
+// Build the application
 var app = builder.Build();
 
-// Configure the HTTP request pipeline
+// Configure middleware for different environments
 if (app.Environment.IsDevelopment())
 {
-	// Show detailed error pages in development
-	app.UseDeveloperExceptionPage();
+	app.UseDeveloperExceptionPage(); // Detailed error pages for development
 }
 else
 {
-	// In production, use the default error handler and HSTS
-	app.UseExceptionHandler("/error");
-	app.UseHsts();
+	app.UseExceptionHandler("/error"); // Custom error handling in production
+	app.UseHsts(); // Enforce HTTP Strict Transport Security in production
 }
 
-// Optionally, you can disable HTTPS redirection for debugging purposes
-app.UseHttpsRedirection();
+app.UseHttpsRedirection(); // Redirect HTTP requests to HTTPS
+app.UseStaticFiles(); // Serve static files
+app.UseRouting(); // Enable endpoint routing
 
-app.UseStaticFiles();
-
-app.UseRouting();
-
-// Enable CORS before authentication and authorization
+// Enable CORS before authentication
 app.UseCors("AllowAllOrigins");
 
-// 3. Use Serilog request logging
+// 2. Use Serilog for request logging
 app.UseSerilogRequestLogging();
 
-// Custom middleware to extract UserID from the JWT and add it to the ClaimsPrincipal
+// Custom middleware to extract UserID and role from the JWT
 app.Use(async (context, next) =>
 {
-	var token = context.Request.Cookies["jwt"];
+	var token = context.Request.Cookies["jwt"]; // Retrieve JWT from cookies
 	if (!string.IsNullOrEmpty(token))
 	{
 		var tokenHandler = new JwtSecurityTokenHandler();
@@ -112,6 +107,7 @@ app.Use(async (context, next) =>
 
 		try
 		{
+			// Validate the token and extract claims
 			var principal = tokenHandler.ValidateToken(token, new TokenValidationParameters
 			{
 				ValidateIssuerSigningKey = true,
@@ -121,12 +117,11 @@ app.Use(async (context, next) =>
 				ClockSkew = TimeSpan.Zero
 			}, out var validatedToken);
 
-			// Extract the UserID claim and role
 			var jwtToken = (JwtSecurityToken)validatedToken;
 			var userId = jwtToken.Claims.First(x => x.Type == "UserID").Value;
 			var role = jwtToken.Claims.First(x => x.Type == "IsAdmin").Value;
-			Log.Information("Role is {Role}", role);
 
+			// Add extracted claims to the user context
 			var claims = new List<Claim>
 			{
 				new Claim(ClaimTypes.NameIdentifier, userId),
@@ -137,29 +132,31 @@ app.Use(async (context, next) =>
 		}
 		catch (Exception ex)
 		{
-			// Token validation failed
-			Log.Error(ex, "Token validation failed for token: {Token}", token);
+			Log.Error(ex, "Token validation failed for token: {Token}", token); // Log token validation failures
 		}
 	}
 
-	await next.Invoke();
+	await next.Invoke(); // Pass control to the next middleware
 });
 
+// Enable authentication and authorization middleware
 app.UseAuthentication();
 app.UseAuthorization();
 
+// Map controllers to their endpoints
 app.MapControllers();
 
+// Start the application
 try
 {
-	Log.Information("Starting web host");
-	app.Run();
+	Log.Information("Starting web host"); // Log startup information
+	app.Run(); // Run the web application
 }
 catch (Exception ex)
 {
-	Log.Fatal(ex, "Host terminated unexpectedly");
+	Log.Fatal(ex, "Host terminated unexpectedly"); // Log critical startup errors
 }
 finally
 {
-	Log.CloseAndFlush();
+	Log.CloseAndFlush(); // Ensure all logs are written before exiting
 }
