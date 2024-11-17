@@ -1,8 +1,5 @@
 // Tasks.tsx
 
-// This component fetches, displays, and manages tasks from the backend API.
-// It allows users to create, edit, delete, and update tasks, and ensures tasks are sorted by priority.
-
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './Tasks.css';
@@ -32,6 +29,8 @@ const Tasks: React.FC = () => {
     const [editTaskData, setEditTaskData] = useState<Partial<Task>>({});
     // State to handle and display error messages
     const [errorMessage, setErrorMessage] = useState<string | null>(null);
+    // State to track the current filter
+    const [taskFilter, setTaskFilter] = useState<'All' | 'Pending' | 'In Progress' | 'Completed'>('All');
 
     // Helper function to sort tasks by priority (ascending order)
     const sortTasks = (tasksArray: Task[]) => {
@@ -39,14 +38,23 @@ const Tasks: React.FC = () => {
     };
 
     // Fetch tasks from the backend API when the component mounts
-    useEffect(() => {
+    const fetchTasks = (filter: 'All' | 'Pending' | 'In Progress' | 'Completed' = 'All') => {
+        const endpoint =
+            filter === 'All'
+                ? 'http://localhost:5191/api/task/usertasks'
+                : `http://localhost:5191/api/task/usertask/${filter}`;
+
         axios
-            .get<Task[]>('http://localhost:5191/api/task/usertasks', { withCredentials: true })
+            .get<Task[]>(endpoint, { withCredentials: true })
             .then((response) => {
                 const sortedTasks = sortTasks(response.data);
                 setTasks(sortedTasks); // Update tasks state with sorted tasks
             })
             .catch((error) => console.error('Error Fetching Tasks:', error));
+    };
+
+    useEffect(() => {
+        fetchTasks(); // Initial fetch for all tasks
     }, []);
 
     // Handle the creation of a new task
@@ -67,12 +75,7 @@ const Tasks: React.FC = () => {
             .post('http://localhost:5191/api/task/create', newTask, { withCredentials: true })
             .then(() => {
                 // After creating the task, fetch the updated task list
-                return axios.get('http://localhost:5191/api/task/usertasks', { withCredentials: true });
-            })
-            .then((response) => {
-                const sortedTasks = sortTasks(response.data);
-                setTasks(sortedTasks); // Update tasks state with new list
-                // Reset newTask state to clear the form
+                fetchTasks(taskFilter); // Fetch tasks again with the current filter
                 setNewTask({
                     task_Name: '',
                     task_Description: '',
@@ -86,13 +89,11 @@ const Tasks: React.FC = () => {
 
     // Handle updating an existing task
     const handleEditTask = (taskId: number) => {
-        // Prepare updated task data by merging existing task data with edited data
         const updatedTaskData = {
             ...tasks.find((task) => task.taskID === taskId),
             ...editTaskData,
         };
 
-        // Validation to ensure all fields are filled and priority is valid
         if (
             !updatedTaskData.task_Name ||
             !updatedTaskData.task_Description ||
@@ -107,15 +108,10 @@ const Tasks: React.FC = () => {
         axios
             .put(`http://localhost:5191/api/task/update/${taskId}`, editTaskData, { withCredentials: true })
             .then(() => {
-                // Update the tasks state with the edited task
-                const updatedTasks = tasks.map((task) =>
-                    task.taskID === taskId ? { ...task, ...editTaskData } : task
-                );
-                const sortedTasks = sortTasks(updatedTasks);
-                setTasks(sortedTasks); // Update tasks state with sorted tasks
-                setEditTaskId(null); // Exit editing mode
-                setEditTaskData({}); // Reset editTaskData state
-                setErrorMessage(null); // Clear error message on success
+                fetchTasks(taskFilter); // Fetch tasks again with the current filter
+                setEditTaskId(null);
+                setEditTaskData({});
+                setErrorMessage(null);
             })
             .catch((error) => console.error('Error Updating Task:', error));
     };
@@ -125,16 +121,48 @@ const Tasks: React.FC = () => {
         axios
             .delete(`http://localhost:5191/api/task/delete/${taskId}`, { withCredentials: true })
             .then(() => {
-                // Remove the deleted task from the tasks state
-                const updatedTasks = tasks.filter((task) => task.taskID !== taskId);
-                setTasks(updatedTasks);
+                fetchTasks(taskFilter); // Fetch tasks again with the current filter
             })
             .catch((error) => console.error('Error Deleting Task:', error));
+    };
+
+    // Handle filter change
+    const handleFilterChange = (filter: 'All' | 'Pending' | 'In Progress' | 'Completed') => {
+        setTaskFilter(filter); // Update the filter state
+        fetchTasks(filter); // Fetch tasks based on the selected filter
     };
 
     return (
         <div className="tasks-container">
             <h1>Tasks</h1>
+
+            {/* Filter buttons */}
+            <div className="task-filter">
+                <button
+                    className={taskFilter === 'All' ? 'active' : ''}
+                    onClick={() => handleFilterChange('All')}
+                >
+                    All
+                </button>
+                <button
+                    className={taskFilter === 'Pending' ? 'active' : ''}
+                    onClick={() => handleFilterChange('Pending')}
+                >
+                    Pending
+                </button>
+                <button
+                    className={taskFilter === 'In Progress' ? 'active' : ''}
+                    onClick={() => handleFilterChange('In Progress')}
+                >
+                    In Progress
+                </button>
+                <button
+                    className={taskFilter === 'Completed' ? 'active' : ''}
+                    onClick={() => handleFilterChange('Completed')}
+                >
+                    Completed
+                </button>
+            </div>
 
             {/* Form to create a new task */}
             <div className="task-form">
@@ -175,9 +203,7 @@ const Tasks: React.FC = () => {
                         })
                     }
                 />
-                {/* Button to create the task */}
                 <button onClick={handleCreateTask}>Create Task</button>
-                {/* Display error message if any */}
                 {errorMessage && <p className="error-message">{errorMessage}</p>}
             </div>
 
@@ -186,7 +212,6 @@ const Tasks: React.FC = () => {
                 {tasks.map((task) => (
                     <li key={task.taskID} className="task-item">
                         {editTaskId === task.taskID ? (
-                            // If the task is being edited, show editable inputs
                             <div>
                                 <input
                                     type="text"
@@ -235,7 +260,6 @@ const Tasks: React.FC = () => {
                                         })
                                     }
                                 />
-                                {/* Buttons to save or cancel the edit */}
                                 <button onClick={() => handleEditTask(task.taskID)}>Save</button>
                                 <button
                                     onClick={() => {
@@ -246,17 +270,14 @@ const Tasks: React.FC = () => {
                                 >
                                     Cancel
                                 </button>
-                                {/* Display error message if any */}
                                 {errorMessage && <p className="error-message">{errorMessage}</p>}
                             </div>
                         ) : (
-                            // Display the task details
                             <div>
                                 <h3>{task.task_Name}</h3>
                                 <p>{task.task_Description}</p>
                                 <p>Status: {task.task_Status}</p>
                                 <p>Priority: {task.task_Priority}</p>
-                                {/* Buttons to edit or delete the task */}
                                 <button
                                     onClick={() => {
                                         setEditTaskId(task.taskID);

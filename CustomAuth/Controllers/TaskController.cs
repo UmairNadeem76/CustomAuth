@@ -160,4 +160,42 @@ public class TaskController : ControllerBase
 
 		return Ok(userTasks);
 	}
+
+	// API for Server Side Filtering
+	[HttpGet("usertask/{taskstatus}")]
+	public async Task<IActionResult> GetByTaskStatus(string taskstatus)
+	{
+		string Task_Status = taskstatus;
+		if (Task_Status == "InProgress")
+		{
+			Task_Status = "In Progress";
+		}
+
+		// Extract the UserID from the authenticated user's claims
+		var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier);
+		if (userIdClaim == null)
+		{
+			// Return 401 Unauthorized if the UserID claim is missing
+			return Unauthorized("UserID not found in the token.");
+		}
+
+		// Parse the UserID claim to an integer
+		if (!int.TryParse(userIdClaim.Value, out int userId))
+		{
+			// Return 401 Unauthorized if the UserID claim is invalid
+			return Unauthorized("Invalid user ID");
+		}
+
+		// Fetch tasks from the database that:
+		// - Belong to the authenticated user
+		// - Are not soft-deleted (isDeleted = false)
+		// - Match the provided Task_Status
+		var userTasks = await _context.TaskList
+			.Where(t => t.UserID == userId && !t.isDeleted && t.Task_Status == Task_Status)
+			.ToListAsync();
+
+		// Return the filtered tasks as an HTTP 200 OK response
+		return Ok(userTasks);
+	}
+
 }
