@@ -139,9 +139,14 @@ app.Use(async (context, next) =>
 	await next.Invoke(); // Pass control to the next middleware
 });
 
-// Enable authentication and authorization middleware
+// Enable authentication middleware to handle JWT and other authentication schemes
 app.UseAuthentication();
+
+// Enable authorization middleware to enforce access control policies
 app.UseAuthorization();
+
+// Add custom exception middleware to handle unhandled exceptions globally
+app.UseMiddleware<ExceptionMiddleware>();
 
 // Map controllers to their endpoints
 app.MapControllers();
@@ -149,12 +154,12 @@ app.MapControllers();
 // Start the application
 try
 {
-	Log.Information("Starting web host"); // Log startup information
+	Log.Information("Starting Web Host"); // Log startup information
 	app.Run(); // Run the web application
 }
 catch (Exception ex)
 {
-	Log.Fatal(ex, "Host terminated unexpectedly"); // Log critical startup errors
+	Log.Fatal(ex, "Host Terminated Unexpectedly"); // Log critical startup errors
 }
 finally
 {

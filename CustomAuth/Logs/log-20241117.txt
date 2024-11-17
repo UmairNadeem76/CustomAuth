@@ -1,0 +1,86 @@
+[2024-11-17 00:13:32 INF] Starting web host
+[2024-11-17 00:13:57 WRN] Failed to determine the https port for redirect.
+[2024-11-17 00:13:57 INF] HTTP GET /api/account/userdata responded 401 in 19.3009 ms
+[2024-11-17 00:13:57 INF] HTTP GET /api/account/userdata responded 401 in 1.8572 ms
+[2024-11-17 00:14:17 INF] HTTP GET /api/account/userdata responded 401 in 1.0611 ms
+[2024-11-17 00:14:17 INF] HTTP GET /api/account/userdata responded 401 in 0.0854 ms
+[2024-11-17 00:14:24 INF] Starting web host
+[2024-11-17 00:14:28 WRN] Failed to determine the https port for redirect.
+[2024-11-17 00:14:28 INF] HTTP GET /api/account/userdata responded 401 in 17.7241 ms
+[2024-11-17 00:14:28 INF] HTTP GET /api/account/userdata responded 401 in 1.8840 ms
+[2024-11-17 00:14:41 INF] Login attempt for umairnadeem779@gmail.com
+[2024-11-17 00:14:42 INF] User umairnadeem779@gmail.com authenticated successfully. IsAdmin: false
+[2024-11-17 00:14:42 INF] JWT token generated and stored for user umairnadeem779@gmail.com
+[2024-11-17 00:14:42 INF] HTTP POST /api/account/login responded 200 in 1075.0025 ms
+[2024-11-17 00:14:42 INF] Authenticated user null is requesting userdata.
+[2024-11-17 00:14:43 INF] User data retrieved successfully for UserID: 2
+[2024-11-17 00:14:43 INF] HTTP GET /api/account/userdata responded 200 in 41.0340 ms
+[2024-11-17 00:14:43 INF] Authenticated user null is requesting userdata.
+[2024-11-17 00:14:43 INF] User data retrieved successfully for UserID: 2
+[2024-11-17 00:14:43 INF] HTTP GET /api/account/userdata responded 200 in 42.9546 ms
+[2024-11-17 00:14:43 INF] Authenticated user null is requesting userdata.
+[2024-11-17 00:14:43 INF] User data retrieved successfully for UserID: 2
+[2024-11-17 00:14:43 INF] HTTP GET /api/account/userdata responded 200 in 2.8644 ms
+[2024-11-17 00:14:43 INF] HTTP GET /api/task/usertasks responded 200 in 88.6057 ms
+[2024-11-17 00:14:43 INF] HTTP GET /api/task/usertasks responded 200 in 1.9964 ms
+[2024-11-17 00:14:44 INF] HTTP GET /api/task/usertasks responded 200 in 2.4446 ms
+[2024-11-17 00:14:44 INF] HTTP GET /api/task/usertasks responded 200 in 2.0491 ms
+[2024-11-17 00:15:13 INF] Authenticated user null is requesting userdata.
+[2024-11-17 00:15:13 INF] User data retrieved successfully for UserID: 2
+[2024-11-17 00:15:13 INF] HTTP GET /api/account/userdata responded 200 in 3.6952 ms
+[2024-11-17 00:15:13 INF] Authenticated user null is requesting userdata.
+[2024-11-17 00:15:13 INF] HTTP GET /api/task/usertasks responded 200 in 3.0444 ms
+[2024-11-17 00:15:13 INF] User data retrieved successfully for UserID: 2
+[2024-11-17 00:15:13 INF] HTTP GET /api/task/usertasks responded 200 in 1.1362 ms
+[2024-11-17 00:15:13 INF] HTTP GET /api/account/userdata responded 200 in 3.2852 ms
+[2024-11-17 00:15:14 INF] HTTP GET /api/task/usertasks responded 200 in 1.8883 ms
+[2024-11-17 00:15:14 INF] HTTP GET /api/task/usertasks responded 200 in 2.0397 ms
+[2024-11-17 00:15:43 INF] HTTP PUT /api/task/update/1 responded 200 in 65.4282 ms
+[2024-11-17 00:15:51 INF] Authenticated user null is requesting userdata.
+[2024-11-17 00:15:51 INF] User data retrieved successfully for UserID: 2
+[2024-11-17 00:15:51 INF] HTTP GET /api/account/userdata responded 200 in 5.1192 ms
+[2024-11-17 00:15:51 INF] Authenticated user null is requesting userdata.
+[2024-11-17 00:15:51 INF] HTTP GET /api/task/usertasks responded 200 in 4.9143 ms
+[2024-11-17 00:15:51 INF] User data retrieved successfully for UserID: 2
+[2024-11-17 00:15:51 INF] HTTP GET /api/account/userdata responded 200 in 3.3832 ms
+[2024-11-17 00:15:51 INF] HTTP GET /api/task/usertasks responded 200 in 1.6305 ms
+[2024-11-17 00:15:55 INF] HTTP GET /api/task/usertasks responded 200 in 1.7485 ms
+[2024-11-17 00:15:55 INF] HTTP GET /api/task/usertasks responded 200 in 2.2234 ms
+[2024-11-17 00:15:58 INF] HTTP PUT /api/task/update/1 responded 200 in 2.9434 ms
+[2024-11-17 00:15:59 INF] Authenticated user null is requesting userdata.
+[2024-11-17 00:15:59 INF] User data retrieved successfully for UserID: 2
+[2024-11-17 00:15:59 INF] HTTP GET /api/account/userdata responded 200 in 3.2071 ms
+[2024-11-17 00:15:59 INF] HTTP GET /api/task/usertasks responded 200 in 2.3836 ms
+[2024-11-17 00:15:59 INF] Authenticated user null is requesting userdata.
+[2024-11-17 00:15:59 INF] HTTP GET /api/task/usertasks responded 200 in 1.3699 ms
+[2024-11-17 00:15:59 INF] User data retrieved successfully for UserID: 2
+[2024-11-17 00:15:59 INF] HTTP GET /api/account/userdata responded 200 in 4.3363 ms
+[2024-11-17 00:16:00 INF] HTTP GET /api/task/usertasks responded 200 in 1.7626 ms
+[2024-11-17 00:16:00 INF] HTTP GET /api/task/usertasks responded 200 in 1.8001 ms
+[2024-11-17 00:16:02 INF] HTTP PUT /api/task/update/1 responded 200 in 2.2192 ms
+[2024-11-17 00:16:03 INF] Authenticated user null is requesting userdata.
+[2024-11-17 00:16:03 INF] User data retrieved successfully for UserID: 2
+[2024-11-17 00:16:03 INF] HTTP GET /api/account/userdata responded 200 in 3.0914 ms
+[2024-11-17 00:16:03 INF] Authenticated user null is requesting userdata.
+[2024-11-17 00:16:03 INF] HTTP GET /api/task/usertasks responded 200 in 1.9881 ms
+[2024-11-17 00:16:03 INF] HTTP GET /api/task/usertasks responded 200 in 1.1165 ms
+[2024-11-17 00:16:03 INF] User data retrieved successfully for UserID: 2
+[2024-11-17 00:16:03 INF] HTTP GET /api/account/userdata responded 200 in 5.6720 ms
+[2024-11-17 00:16:04 INF] HTTP GET /api/task/usertasks responded 200 in 1.8169 ms
+[2024-11-17 00:16:04 INF] HTTP GET /api/task/usertasks responded 200 in 2.1804 ms
+[2024-11-17 00:16:10 INF] Authenticated user null is requesting userdata.
+[2024-11-17 00:16:10 INF] HTTP GET /api/task/usertasks responded 200 in 1.3015 ms
+[2024-11-17 00:16:10 INF] User data retrieved successfully for UserID: 2
+[2024-11-17 00:16:10 INF] HTTP GET /api/task/usertasks responded 200 in 1.3428 ms
+[2024-11-17 00:16:10 INF] HTTP GET /api/account/userdata responded 200 in 3.5240 ms
+[2024-11-17 00:16:10 INF] Authenticated user null is requesting userdata.
+[2024-11-17 00:16:10 INF] User data retrieved successfully for UserID: 2
+[2024-11-17 00:16:10 INF] HTTP GET /api/account/userdata responded 200 in 4.0027 ms
+[2024-11-17 00:16:13 INF] HTTP GET /api/task/usertasks responded 200 in 2.4471 ms
+[2024-11-17 00:16:13 INF] HTTP GET /api/task/usertasks responded 200 in 1.0418 ms
+[2024-11-17 00:18:08 INF] Anonymous user is attempting to log out.
+[2024-11-17 00:18:08 INF] JWT cookie deleted for user null. Logout successful.
+[2024-11-17 00:18:08 INF] HTTP POST /api/account/logout responded 200 in 3.0521 ms
+[2024-11-17 00:18:08 INF] HTTP GET /api/account/userdata responded 401 in 0.1149 ms
+[2024-11-17 00:18:08 INF] HTTP GET /api/account/userdata responded 401 in 0.1191 ms
+[2024-11-17 00:18:08 INF] HTTP GET /api/account/userdata responded 401 in 0.0406 ms
