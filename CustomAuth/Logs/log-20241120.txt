@@ -1,0 +1,301 @@
+[2024-11-20 19:32:04 INF] Starting Web Host
+[2024-11-20 19:32:39 WRN] Failed to determine the https port for redirect.
+[2024-11-20 19:32:40 INF] HTTP GET /api/account/userdata responded 401 in 1106.8739 ms
+[2024-11-20 19:32:40 INF] HTTP GET /api/account/userdata responded 401 in 2.0658 ms
+[2024-11-20 19:33:36 INF] Login attempt for umairnadeem779@gmail.com
+[2024-11-20 19:33:37 INF] User umairnadeem779@gmail.com authenticated successfully. IsAdmin: false
+[2024-11-20 19:33:37 INF] JWT token generated and stored for user umairnadeem779@gmail.com
+[2024-11-20 19:33:37 INF] HTTP POST /api/account/login responded 200 in 2202.0535 ms
+[2024-11-20 19:33:39 INF] Authenticated user null is requesting userdata.
+[2024-11-20 19:33:39 INF] User data retrieved successfully for UserID: 2
+[2024-11-20 19:33:39 INF] HTTP GET /api/account/userdata responded 200 in 46.1101 ms
+[2024-11-20 19:33:39 INF] Authenticated user null is requesting userdata.
+[2024-11-20 19:33:39 INF] User data retrieved successfully for UserID: 2
+[2024-11-20 19:33:39 INF] HTTP GET /api/account/userdata responded 200 in 43.7025 ms
+[2024-11-20 19:33:39 INF] Authenticated user null is requesting userdata.
+[2024-11-20 19:33:39 INF] User data retrieved successfully for UserID: 2
+[2024-11-20 19:33:39 INF] HTTP GET /api/account/userdata responded 200 in 2.6794 ms
+[2024-11-20 19:33:39 INF] HTTP GET /api/task/usertasks responded 200 in 84.1709 ms
+[2024-11-20 19:33:39 INF] HTTP GET /api/task/usertasks responded 200 in 2.3609 ms
+[2024-11-20 19:33:55 INF] HTTP GET /api/task/usertasks responded 200 in 3.1480 ms
+[2024-11-20 19:33:55 INF] HTTP GET /api/task/usertasks responded 200 in 2.4792 ms
+[2024-11-20 19:34:04 INF] HTTP GET /api/task/usertask/Pending responded 200 in 12.6613 ms
+[2024-11-20 19:34:07 INF] HTTP GET /api/task/usertask/Completed responded 200 in 1.8080 ms
+[2024-11-20 19:34:08 INF] HTTP GET /api/task/usertask/In Progress responded 200 in 1.6763 ms
+[2024-11-20 19:34:09 INF] HTTP GET /api/task/usertasks responded 200 in 1.6456 ms
+[2024-11-20 19:34:33 INF] Authenticated user null is requesting userdata.
+[2024-11-20 19:34:33 INF] User data retrieved successfully for UserID: 2
+[2024-11-20 19:34:33 INF] HTTP GET /api/account/userdata responded 200 in 3.9334 ms
+[2024-11-20 19:34:33 INF] Authenticated user null is requesting userdata.
+[2024-11-20 19:34:33 INF] HTTP GET /api/task/usertasks responded 200 in 2.2261 ms
+[2024-11-20 19:34:33 INF] User data retrieved successfully for UserID: 2
+[2024-11-20 19:34:33 INF] HTTP GET /api/account/userdata responded 200 in 2.4896 ms
+[2024-11-20 19:34:33 INF] HTTP GET /api/task/usertasks responded 200 in 1.5485 ms
+[2024-11-20 19:34:35 INF] HTTP GET /api/task/usertasks responded 200 in 1.8867 ms
+[2024-11-20 19:34:35 INF] HTTP GET /api/task/usertasks responded 200 in 2.0404 ms
+[2024-11-20 19:34:39 INF] HTTP PUT /api/task/update/1 responded 200 in 112.3307 ms
+[2024-11-20 19:34:39 INF] HTTP GET /api/task/usertasks responded 200 in 12.3286 ms
+[2024-11-20 19:34:40 INF] Authenticated user null is requesting userdata.
+[2024-11-20 19:34:40 INF] HTTP GET /api/task/usertasks responded 200 in 1.7186 ms
+[2024-11-20 19:34:40 INF] HTTP GET /api/task/usertasks responded 200 in 3.0876 ms
+[2024-11-20 19:34:40 INF] User data retrieved successfully for UserID: 2
+[2024-11-20 19:34:40 INF] HTTP GET /api/account/userdata responded 200 in 10.2204 ms
+[2024-11-20 19:34:40 INF] Authenticated user null is requesting userdata.
+[2024-11-20 19:34:40 INF] User data retrieved successfully for UserID: 2
+[2024-11-20 19:34:40 INF] HTTP GET /api/account/userdata responded 200 in 2.6224 ms
+[2024-11-20 19:34:43 INF] HTTP GET /api/task/usertasks responded 200 in 3.4489 ms
+[2024-11-20 19:34:43 INF] HTTP GET /api/task/usertasks responded 200 in 1.5795 ms
+[2024-11-20 19:35:16 INF] HTTP PUT /api/task/update/1 responded 200 in 4.7362 ms
+[2024-11-20 19:35:16 INF] HTTP GET /api/task/usertasks responded 200 in 1.4650 ms
+[2024-11-20 19:35:53 INF] Authenticated user null is requesting userdata.
+[2024-11-20 19:35:53 INF] User data retrieved successfully for UserID: 2
+[2024-11-20 19:35:53 INF] HTTP GET /api/account/userdata responded 200 in 5.3778 ms
+[2024-11-20 19:35:53 INF] HTTP GET /api/task/usertasks responded 200 in 3.3614 ms
+[2024-11-20 19:35:53 INF] Authenticated user null is requesting userdata.
+[2024-11-20 19:35:53 INF] User data retrieved successfully for UserID: 2
+[2024-11-20 19:35:53 INF] HTTP GET /api/task/usertasks responded 200 in 1.9335 ms
+[2024-11-20 19:35:53 INF] HTTP GET /api/account/userdata responded 200 in 3.2393 ms
+[2024-11-20 19:35:53 INF] HTTP GET /api/task/usertasks responded 200 in 1.7846 ms
+[2024-11-20 19:35:53 INF] HTTP GET /api/task/usertasks responded 200 in 1.6964 ms
+[2024-11-20 19:35:54 INF] Authenticated user null is requesting userdata.
+[2024-11-20 19:35:54 INF] User data retrieved successfully for UserID: 2
+[2024-11-20 19:35:54 INF] HTTP GET /api/account/userdata responded 200 in 2.9488 ms
+[2024-11-20 19:35:54 INF] Authenticated user null is requesting userdata.
+[2024-11-20 19:35:54 INF] HTTP GET /api/task/usertasks responded 200 in 2.2304 ms
+[2024-11-20 19:35:54 INF] User data retrieved successfully for UserID: 2
+[2024-11-20 19:35:54 INF] HTTP GET /api/task/usertasks responded 200 in 0.8301 ms
+[2024-11-20 19:35:54 INF] HTTP GET /api/account/userdata responded 200 in 2.9259 ms
+[2024-11-20 19:35:55 INF] Anonymous user is attempting to log out.
+[2024-11-20 19:35:55 INF] JWT cookie deleted for user null. Logout successful.
+[2024-11-20 19:35:55 INF] HTTP POST /api/account/logout responded 200 in 2.5366 ms
+[2024-11-20 19:35:55 INF] HTTP GET /api/account/userdata responded 401 in 0.1333 ms
+[2024-11-20 19:35:55 INF] HTTP GET /api/account/userdata responded 401 in 0.1095 ms
+[2024-11-20 19:35:55 INF] HTTP GET /api/account/userdata responded 401 in 0.0660 ms
+[2024-11-20 19:35:59 INF] HTTP GET /api/account/userdata responded 401 in 0.1543 ms
+[2024-11-20 19:35:59 INF] HTTP GET /api/account/userdata responded 401 in 0.1197 ms
+[2024-11-20 19:36:01 INF] HTTP GET /api/account/userdata responded 401 in 0.1175 ms
+[2024-11-20 19:36:01 INF] HTTP GET /api/account/userdata responded 401 in 0.0929 ms
+[2024-11-20 19:36:01 INF] HTTP GET /api/account/userdata responded 401 in 0.0620 ms
+[2024-11-20 19:36:01 INF] HTTP GET /api/account/userdata responded 401 in 0.1397 ms
+[2024-11-20 19:36:12 INF] Login attempt for admin@gmail.com
+[2024-11-20 19:36:12 INF] User admin@gmail.com authenticated successfully. IsAdmin: true
+[2024-11-20 19:36:12 INF] JWT token generated and stored for user admin@gmail.com
+[2024-11-20 19:36:12 INF] HTTP POST /api/account/login responded 200 in 243.9294 ms
+[2024-11-20 19:36:14 INF] Authenticated user null is requesting userdata.
+[2024-11-20 19:36:14 INF] User data retrieved successfully for UserID: 1
+[2024-11-20 19:36:14 INF] HTTP GET /api/account/userdata responded 200 in 2.1277 ms
+[2024-11-20 19:36:14 INF] Admin Unknown Admin requested all users.
+[2024-11-20 19:36:14 INF] Admin Unknown Admin retrieved 2 users.
+[2024-11-20 19:36:14 INF] HTTP GET /api/admin/users responded 200 in 23.3090 ms
+[2024-11-20 19:36:14 INF] Admin Unknown Admin requested all users.
+[2024-11-20 19:36:14 INF] Admin Unknown Admin retrieved 2 users.
+[2024-11-20 19:36:14 INF] HTTP GET /api/admin/users responded 200 in 2.4980 ms
+[2024-11-20 19:36:18 INF] HTTP GET /api/task/usertasks responded 200 in 2.0741 ms
+[2024-11-20 19:36:18 INF] HTTP GET /api/task/usertasks responded 200 in 1.4346 ms
+[2024-11-20 19:36:20 INF] Authenticated user null is requesting userdata.
+[2024-11-20 19:36:20 INF] HTTP GET /api/task/usertasks responded 200 in 1.2595 ms
+[2024-11-20 19:36:20 INF] User data retrieved successfully for UserID: 1
+[2024-11-20 19:36:20 INF] HTTP GET /api/account/userdata responded 200 in 3.9889 ms
+[2024-11-20 19:36:20 INF] HTTP GET /api/task/usertasks responded 200 in 1.5308 ms
+[2024-11-20 19:36:20 INF] Authenticated user null is requesting userdata.
+[2024-11-20 19:36:20 INF] User data retrieved successfully for UserID: 1
+[2024-11-20 19:36:20 INF] HTTP GET /api/account/userdata responded 200 in 3.6614 ms
+[2024-11-20 19:36:26 INF] Admin Unknown Admin requested all users.
+[2024-11-20 19:36:26 INF] Admin Unknown Admin retrieved 2 users.
+[2024-11-20 19:36:26 INF] HTTP GET /api/admin/users responded 200 in 2.9630 ms
+[2024-11-20 19:36:26 INF] Admin Unknown Admin requested all users.
+[2024-11-20 19:36:26 INF] Admin Unknown Admin retrieved 2 users.
+[2024-11-20 19:36:26 INF] HTTP GET /api/admin/users responded 200 in 2.4630 ms
+[2024-11-20 19:36:29 INF] Admin Unknown Admin requested tasks for UserID 1.
+[2024-11-20 19:36:30 INF] Admin Unknown Admin retrieved 0 tasks for UserID 1.
+[2024-11-20 19:36:30 INF] HTTP GET /api/admin/users/1/tasks responded 200 in 38.4961 ms
+[2024-11-20 19:36:35 INF] Admin Unknown Admin requested tasks for UserID 2.
+[2024-11-20 19:36:35 INF] Admin Unknown Admin retrieved 5 tasks for UserID 2.
+[2024-11-20 19:36:35 INF] HTTP GET /api/admin/users/2/tasks responded 200 in 3.6432 ms
+[2024-11-20 19:36:36 INF] Admin Unknown Admin requested tasks for UserID 2.
+[2024-11-20 19:36:36 INF] Admin Unknown Admin retrieved 5 tasks for UserID 2.
+[2024-11-20 19:36:36 INF] HTTP GET /api/admin/users/2/tasks responded 200 in 2.7514 ms
+[2024-11-20 19:36:38 INF] Admin Unknown Admin requested tasks for UserID 2.
+[2024-11-20 19:36:38 INF] Admin Unknown Admin retrieved 5 tasks for UserID 2.
+[2024-11-20 19:36:38 INF] HTTP GET /api/admin/users/2/tasks responded 200 in 2.8883 ms
+[2024-11-20 19:36:38 INF] Admin Unknown Admin requested tasks for UserID 2.
+[2024-11-20 19:36:38 INF] Admin Unknown Admin retrieved 5 tasks for UserID 2.
+[2024-11-20 19:36:38 INF] HTTP GET /api/admin/users/2/tasks responded 200 in 2.8362 ms
+[2024-11-20 19:36:59 INF] Anonymous user is attempting to log out.
+[2024-11-20 19:36:59 INF] JWT cookie deleted for user null. Logout successful.
+[2024-11-20 19:36:59 INF] HTTP POST /api/account/logout responded 200 in 1.2970 ms
+[2024-11-20 19:36:59 INF] HTTP GET /api/account/userdata responded 401 in 0.0925 ms
+[2024-11-20 19:36:59 INF] HTTP GET /api/account/userdata responded 401 in 0.0747 ms
+[2024-11-20 19:37:14 INF] Registration attempt for email ahsan123@gmail.com
+[2024-11-20 19:37:15 INF] User Muhammad Ahsan Nadeem registered successfully.
+[2024-11-20 19:37:15 INF] HTTP POST /api/account/register responded 200 in 241.3506 ms
+[2024-11-20 19:37:46 INF] Login attempt for ahsan123@gmail.com
+[2024-11-20 19:37:46 INF] User ahsan123@gmail.com authenticated successfully. IsAdmin: false
+[2024-11-20 19:37:46 INF] JWT token generated and stored for user ahsan123@gmail.com
+[2024-11-20 19:37:46 INF] HTTP POST /api/account/login responded 200 in 124.0631 ms
+[2024-11-20 19:37:47 INF] Authenticated user null is requesting userdata.
+[2024-11-20 19:37:47 INF] User data retrieved successfully for UserID: 3
+[2024-11-20 19:37:47 INF] HTTP GET /api/account/userdata responded 200 in 3.2684 ms
+[2024-11-20 19:37:47 INF] Authenticated user null is requesting userdata.
+[2024-11-20 19:37:47 INF] User data retrieved successfully for UserID: 3
+[2024-11-20 19:37:47 INF] HTTP GET /api/task/usertasks responded 200 in 2.8453 ms
+[2024-11-20 19:37:47 INF] HTTP GET /api/account/userdata responded 200 in 3.4387 ms
+[2024-11-20 19:37:47 INF] HTTP GET /api/task/usertasks responded 200 in 1.1984 ms
+[2024-11-20 19:37:47 INF] Authenticated user null is requesting userdata.
+[2024-11-20 19:37:47 INF] User data retrieved successfully for UserID: 3
+[2024-11-20 19:37:47 INF] HTTP GET /api/account/userdata responded 200 in 3.9001 ms
+[2024-11-20 19:37:53 INF] HTTP GET /api/task/usertasks responded 200 in 1.8011 ms
+[2024-11-20 19:37:53 INF] HTTP GET /api/task/usertasks responded 200 in 1.0185 ms
+[2024-11-20 19:38:22 INF] HTTP POST /api/task/create responded 200 in 135.5252 ms
+[2024-11-20 19:38:22 INF] HTTP GET /api/task/usertasks responded 200 in 1.9129 ms
+[2024-11-20 19:38:39 INF] Anonymous user is attempting to log out.
+[2024-11-20 19:38:39 INF] JWT cookie deleted for user null. Logout successful.
+[2024-11-20 19:38:39 INF] HTTP POST /api/account/logout responded 200 in 1.0195 ms
+[2024-11-20 19:38:39 INF] HTTP GET /api/account/userdata responded 401 in 0.0833 ms
+[2024-11-20 19:38:39 INF] HTTP GET /api/account/userdata responded 401 in 0.1104 ms
+[2024-11-20 19:38:39 INF] HTTP GET /api/account/userdata responded 401 in 0.0782 ms
+[2024-11-20 19:38:45 INF] Login attempt for admin@gmail.com
+[2024-11-20 19:38:45 INF] User admin@gmail.com authenticated successfully. IsAdmin: true
+[2024-11-20 19:38:45 INF] JWT token generated and stored for user admin@gmail.com
+[2024-11-20 19:38:45 INF] HTTP POST /api/account/login responded 200 in 124.0855 ms
+[2024-11-20 19:38:46 INF] Authenticated user null is requesting userdata.
+[2024-11-20 19:38:46 INF] User data retrieved successfully for UserID: 1
+[2024-11-20 19:38:46 INF] HTTP GET /api/account/userdata responded 200 in 2.4941 ms
+[2024-11-20 19:38:46 INF] Admin Unknown Admin requested all users.
+[2024-11-20 19:38:46 INF] Admin Unknown Admin retrieved 3 users.
+[2024-11-20 19:38:46 INF] HTTP GET /api/admin/users responded 200 in 3.7618 ms
+[2024-11-20 19:38:46 INF] Admin Unknown Admin requested all users.
+[2024-11-20 19:38:46 INF] Admin Unknown Admin retrieved 3 users.
+[2024-11-20 19:38:46 INF] HTTP GET /api/admin/users responded 200 in 2.1551 ms
+[2024-11-20 19:38:51 INF] Admin Unknown Admin requested tasks for UserID 3.
+[2024-11-20 19:38:51 INF] Admin Unknown Admin retrieved 1 tasks for UserID 3.
+[2024-11-20 19:38:51 INF] HTTP GET /api/admin/users/3/tasks responded 200 in 3.9273 ms
+[2024-11-20 19:38:55 INF] Anonymous user is attempting to log out.
+[2024-11-20 19:38:55 INF] JWT cookie deleted for user null. Logout successful.
+[2024-11-20 19:38:55 INF] HTTP POST /api/account/logout responded 200 in 1.1401 ms
+[2024-11-20 19:38:55 INF] HTTP GET /api/account/userdata responded 401 in 0.1667 ms
+[2024-11-20 19:38:55 INF] HTTP GET /api/account/userdata responded 401 in 0.0408 ms
+[2024-11-20 19:39:00 INF] Login attempt for ahsan123@gmail.com
+[2024-11-20 19:39:00 INF] User ahsan123@gmail.com authenticated successfully. IsAdmin: false
+[2024-11-20 19:39:00 INF] JWT token generated and stored for user ahsan123@gmail.com
+[2024-11-20 19:39:00 INF] HTTP POST /api/account/login responded 200 in 123.1443 ms
+[2024-11-20 19:39:01 INF] Authenticated user null is requesting userdata.
+[2024-11-20 19:39:01 INF] User data retrieved successfully for UserID: 3
+[2024-11-20 19:39:01 INF] HTTP GET /api/account/userdata responded 200 in 3.1449 ms
+[2024-11-20 19:39:01 INF] Authenticated user null is requesting userdata.
+[2024-11-20 19:39:01 INF] User data retrieved successfully for UserID: 3
+[2024-11-20 19:39:01 INF] HTTP GET /api/task/usertasks responded 200 in 3.0168 ms
+[2024-11-20 19:39:01 INF] HTTP GET /api/account/userdata responded 200 in 3.5213 ms
+[2024-11-20 19:39:01 INF] Authenticated user null is requesting userdata.
+[2024-11-20 19:39:01 INF] HTTP GET /api/task/usertasks responded 200 in 3.0206 ms
+[2024-11-20 19:39:01 INF] User data retrieved successfully for UserID: 3
+[2024-11-20 19:39:01 INF] HTTP GET /api/account/userdata responded 200 in 6.8581 ms
+[2024-11-20 19:39:03 INF] HTTP GET /api/task/usertasks responded 200 in 2.2106 ms
+[2024-11-20 19:39:03 INF] HTTP GET /api/task/usertasks responded 200 in 1.3549 ms
+[2024-11-20 19:39:05 INF] HTTP DELETE /api/task/delete/6 responded 200 in 7.0344 ms
+[2024-11-20 19:39:05 INF] HTTP GET /api/task/usertasks responded 200 in 1.3330 ms
+[2024-11-20 19:39:06 INF] Authenticated user null is requesting userdata.
+[2024-11-20 19:39:06 INF] User data retrieved successfully for UserID: 3
+[2024-11-20 19:39:06 INF] HTTP GET /api/account/userdata responded 200 in 3.8929 ms
+[2024-11-20 19:39:06 INF] HTTP GET /api/task/usertasks responded 200 in 2.4812 ms
+[2024-11-20 19:39:06 INF] Authenticated user null is requesting userdata.
+[2024-11-20 19:39:06 INF] HTTP GET /api/task/usertasks responded 200 in 0.7594 ms
+[2024-11-20 19:39:06 INF] User data retrieved successfully for UserID: 3
+[2024-11-20 19:39:06 INF] HTTP GET /api/account/userdata responded 200 in 3.3852 ms
+[2024-11-20 19:39:09 INF] HTTP GET /api/task/usertasks responded 200 in 1.2336 ms
+[2024-11-20 19:39:09 INF] HTTP GET /api/task/usertasks responded 200 in 1.6020 ms
+[2024-11-20 19:39:13 INF] Authenticated user null is requesting userdata.
+[2024-11-20 19:39:13 INF] User data retrieved successfully for UserID: 3
+[2024-11-20 19:39:13 INF] HTTP GET /api/account/userdata responded 200 in 2.3136 ms
+[2024-11-20 19:39:13 INF] Authenticated user null is requesting userdata.
+[2024-11-20 19:39:13 INF] HTTP GET /api/task/usertasks responded 200 in 1.1494 ms
+[2024-11-20 19:39:13 INF] User data retrieved successfully for UserID: 3
+[2024-11-20 19:39:13 INF] HTTP GET /api/task/usertasks responded 200 in 1.1635 ms
+[2024-11-20 19:39:13 INF] HTTP GET /api/account/userdata responded 200 in 2.9368 ms
+[2024-11-20 19:39:14 INF] HTTP GET /api/task/usertasks responded 200 in 0.9609 ms
+[2024-11-20 19:39:14 INF] HTTP GET /api/task/usertasks responded 200 in 1.3754 ms
+[2024-11-20 19:39:14 INF] Authenticated user null is requesting userdata.
+[2024-11-20 19:39:14 INF] User data retrieved successfully for UserID: 3
+[2024-11-20 19:39:14 INF] HTTP GET /api/task/usertasks responded 200 in 1.2669 ms
+[2024-11-20 19:39:14 INF] HTTP GET /api/account/userdata responded 200 in 2.2024 ms
+[2024-11-20 19:39:14 INF] Authenticated user null is requesting userdata.
+[2024-11-20 19:39:14 INF] HTTP GET /api/task/usertasks responded 200 in 0.7309 ms
+[2024-11-20 19:39:15 INF] User data retrieved successfully for UserID: 3
+[2024-11-20 19:39:15 INF] HTTP GET /api/account/userdata responded 200 in 3.7178 ms
+[2024-11-20 19:39:16 INF] Authenticated user null is requesting userdata.
+[2024-11-20 19:39:16 INF] User data retrieved successfully for UserID: 3
+[2024-11-20 19:39:16 INF] HTTP GET /api/account/userdata responded 200 in 2.0208 ms
+[2024-11-20 19:39:16 INF] Authenticated user null is requesting userdata.
+[2024-11-20 19:39:16 INF] User data retrieved successfully for UserID: 3
+[2024-11-20 19:39:16 INF] HTTP GET /api/account/userdata responded 200 in 2.3918 ms
+[2024-11-20 19:39:16 INF] Authenticated user null is requesting userdata.
+[2024-11-20 19:39:16 INF] User data retrieved successfully for UserID: 3
+[2024-11-20 19:39:16 INF] HTTP GET /api/account/userdata responded 200 in 2.6637 ms
+[2024-11-20 19:39:16 INF] Authenticated user null is requesting userdata.
+[2024-11-20 19:39:16 INF] User data retrieved successfully for UserID: 3
+[2024-11-20 19:39:16 INF] HTTP GET /api/account/userdata responded 200 in 3.0493 ms
+[2024-11-20 19:39:16 INF] Authenticated user null is requesting userdata.
+[2024-11-20 19:39:16 INF] HTTP GET /api/task/usertasks responded 200 in 1.3999 ms
+[2024-11-20 19:39:16 INF] User data retrieved successfully for UserID: 3
+[2024-11-20 19:39:16 INF] HTTP GET /api/task/usertasks responded 200 in 0.6039 ms
+[2024-11-20 19:39:16 INF] HTTP GET /api/account/userdata responded 200 in 2.8808 ms
+[2024-11-20 19:39:16 INF] Authenticated user null is requesting userdata.
+[2024-11-20 19:39:16 INF] User data retrieved successfully for UserID: 3
+[2024-11-20 19:39:16 INF] HTTP GET /api/account/userdata responded 200 in 3.6700 ms
+[2024-11-20 19:39:49 INF] HTTP GET /api/task/usertasks responded 200 in 1.0827 ms
+[2024-11-20 19:39:49 INF] HTTP GET /api/task/usertasks responded 200 in 1.0610 ms
+[2024-11-20 19:39:49 INF] HTTP GET /api/task/usertask/Pending responded 200 in 2.0308 ms
+[2024-11-20 19:39:49 INF] HTTP GET /api/task/usertask/In Progress responded 200 in 1.0796 ms
+[2024-11-20 19:39:50 INF] HTTP GET /api/task/usertask/Completed responded 200 in 1.0772 ms
+[2024-11-20 19:39:50 INF] HTTP GET /api/task/usertask/In Progress responded 200 in 1.1413 ms
+[2024-11-20 19:39:50 INF] HTTP GET /api/task/usertask/Pending responded 200 in 1.4377 ms
+[2024-11-20 19:39:51 INF] HTTP GET /api/task/usertasks responded 200 in 1.0156 ms
+[2024-11-20 19:40:07 INF] Authenticated user null is requesting userdata.
+[2024-11-20 19:40:07 INF] User data retrieved successfully for UserID: 3
+[2024-11-20 19:40:07 INF] HTTP GET /api/account/userdata responded 200 in 2.9078 ms
+[2024-11-20 19:40:07 INF] Authenticated user null is requesting userdata.
+[2024-11-20 19:40:07 INF] User data retrieved successfully for UserID: 3
+[2024-11-20 19:40:07 INF] HTTP GET /api/account/userdata responded 200 in 2.3092 ms
+[2024-11-20 19:40:07 INF] Authenticated user null is requesting userdata.
+[2024-11-20 19:40:07 INF] User data retrieved successfully for UserID: 3
+[2024-11-20 19:40:07 INF] HTTP GET /api/account/userdata responded 200 in 2.4779 ms
+[2024-11-20 19:40:07 INF] Authenticated user null is requesting userdata.
+[2024-11-20 19:40:07 INF] User data retrieved successfully for UserID: 3
+[2024-11-20 19:40:07 INF] HTTP GET /api/account/userdata responded 200 in 2.2922 ms
+[2024-11-20 19:40:07 INF] HTTP GET /api/task/usertasks responded 200 in 1.5623 ms
+[2024-11-20 19:40:07 INF] HTTP GET /api/task/usertasks responded 200 in 1.0896 ms
+[2024-11-20 19:40:07 INF] Authenticated user null is requesting userdata.
+[2024-11-20 19:40:07 INF] User data retrieved successfully for UserID: 3
+[2024-11-20 19:40:07 INF] HTTP GET /api/task/usertasks responded 200 in 2.5097 ms
+[2024-11-20 19:40:07 INF] HTTP GET /api/account/userdata responded 200 in 3.1879 ms
+[2024-11-20 19:40:07 INF] Authenticated user null is requesting userdata.
+[2024-11-20 19:40:07 INF] HTTP GET /api/task/usertasks responded 200 in 0.9737 ms
+[2024-11-20 19:40:07 INF] User data retrieved successfully for UserID: 3
+[2024-11-20 19:40:07 INF] HTTP GET /api/account/userdata responded 200 in 3.9817 ms
+[2024-11-20 19:40:09 INF] Anonymous user is attempting to log out.
+[2024-11-20 19:40:09 INF] JWT cookie deleted for user null. Logout successful.
+[2024-11-20 19:40:09 INF] HTTP POST /api/account/logout responded 200 in 1.5347 ms
+[2024-11-20 19:40:09 INF] HTTP GET /api/account/userdata responded 401 in 0.0851 ms
+[2024-11-20 19:40:09 INF] HTTP GET /api/account/userdata responded 401 in 0.0984 ms
+[2024-11-20 19:40:09 INF] HTTP GET /api/account/userdata responded 401 in 0.0543 ms
+[2024-11-20 19:40:19 INF] Login attempt for admin@gmail.com
+[2024-11-20 19:40:19 INF] User admin@gmail.com authenticated successfully. IsAdmin: true
+[2024-11-20 19:40:19 INF] JWT token generated and stored for user admin@gmail.com
+[2024-11-20 19:40:19 INF] HTTP POST /api/account/login responded 200 in 124.1236 ms
+[2024-11-20 19:40:20 INF] Authenticated user null is requesting userdata.
+[2024-11-20 19:40:20 INF] User data retrieved successfully for UserID: 1
+[2024-11-20 19:40:20 INF] HTTP GET /api/account/userdata responded 200 in 2.5243 ms
+[2024-11-20 19:40:20 INF] Admin Unknown Admin requested all users.
+[2024-11-20 19:40:20 INF] Admin Unknown Admin retrieved 3 users.
+[2024-11-20 19:40:20 INF] HTTP GET /api/admin/users responded 200 in 3.1334 ms
+[2024-11-20 19:40:20 INF] Admin Unknown Admin requested all users.
+[2024-11-20 19:40:20 INF] Admin Unknown Admin retrieved 3 users.
+[2024-11-20 19:40:20 INF] HTTP GET /api/admin/users responded 200 in 2.1661 ms
+[2024-11-20 19:40:22 INF] Admin Unknown Admin requested tasks for UserID 3.
+[2024-11-20 19:40:22 INF] Admin Unknown Admin retrieved 1 tasks for UserID 3.
+[2024-11-20 19:40:22 INF] HTTP GET /api/admin/users/3/tasks responded 200 in 3.7433 ms
+[2024-11-20 19:40:28 INF] Anonymous user is attempting to log out.
+[2024-11-20 19:40:28 INF] JWT cookie deleted for user null. Logout successful.
+[2024-11-20 19:40:28 INF] HTTP POST /api/account/logout responded 200 in 1.0665 ms
+[2024-11-20 19:40:29 INF] HTTP GET /api/account/userdata responded 401 in 0.0814 ms
+[2024-11-20 19:40:29 INF] HTTP GET /api/account/userdata responded 401 in 0.0582 ms

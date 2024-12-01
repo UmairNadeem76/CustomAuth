@@ -15,7 +15,7 @@ namespace CustomAuth.Models
 
 		// Property for storing the password input
 		[Required(ErrorMessage = "Password Is Required")] // Ensures this field is mandatory
-		[StringLength(20, MinimumLength = 8, ErrorMessage = "Max 20 & Minimum 8 Characters Are Allowed")]
+		[StringLength(100, MinimumLength = 8, ErrorMessage = "Max 100 & Minimum 8 Characters Are Allowed")]
 		// Restricts the input length to a maximum of 20 characters and a minimum of 8 characters
 		[DataType(DataType.Password)] // Specifies that this property represents a password field
 		public string Password { get; set; }

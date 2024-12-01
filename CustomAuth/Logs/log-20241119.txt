@@ -1,0 +1,29 @@
+[2024-11-19 18:47:24 INF] Starting Web Host
+[2024-11-19 18:48:04 WRN] Failed to determine the https port for redirect.
+[2024-11-19 18:48:05 INF] HTTP GET /api/account/userdata responded 401 in 1031.1739 ms
+[2024-11-19 18:48:05 INF] HTTP GET /api/account/userdata responded 401 in 1.9837 ms
+[2024-11-19 18:48:24 INF] Login attempt for umairnadeem779@gmail.com
+[2024-11-19 18:48:26 INF] User umairnadeem779@gmail.com authenticated successfully. IsAdmin: false
+[2024-11-19 18:48:26 INF] JWT token generated and stored for user umairnadeem779@gmail.com
+[2024-11-19 18:48:26 INF] HTTP POST /api/account/login responded 200 in 2018.9746 ms
+[2024-11-19 18:48:27 INF] Authenticated user null is requesting userdata.
+[2024-11-19 18:48:27 INF] User data retrieved successfully for UserID: 2
+[2024-11-19 18:48:27 INF] HTTP GET /api/account/userdata responded 200 in 43.7981 ms
+[2024-11-19 18:48:27 INF] Authenticated user null is requesting userdata.
+[2024-11-19 18:48:27 INF] User data retrieved successfully for UserID: 2
+[2024-11-19 18:48:27 INF] HTTP GET /api/account/userdata responded 200 in 47.6391 ms
+[2024-11-19 18:48:27 INF] Authenticated user null is requesting userdata.
+[2024-11-19 18:48:27 INF] User data retrieved successfully for UserID: 2
+[2024-11-19 18:48:27 INF] HTTP GET /api/account/userdata responded 200 in 3.4031 ms
+[2024-11-19 18:48:27 INF] HTTP GET /api/task/usertasks responded 200 in 129.3962 ms
+[2024-11-19 18:48:27 INF] HTTP GET /api/task/usertasks responded 200 in 2.3448 ms
+[2024-11-19 18:48:28 INF] HTTP GET /api/task/usertasks responded 200 in 2.8661 ms
+[2024-11-19 18:48:28 INF] HTTP GET /api/task/usertasks responded 200 in 2.4023 ms
+[2024-11-19 18:48:31 INF] Anonymous user is attempting to log out.
+[2024-11-19 18:48:31 INF] JWT cookie deleted for user null. Logout successful.
+[2024-11-19 18:48:31 INF] HTTP POST /api/account/logout responded 200 in 6.4817 ms
+[2024-11-19 18:48:31 INF] HTTP GET /api/account/userdata responded 401 in 0.1211 ms
+[2024-11-19 18:48:31 INF] HTTP GET /api/account/userdata responded 401 in 0.1846 ms
+[2024-11-19 18:48:31 INF] HTTP GET /api/account/userdata responded 401 in 0.2201 ms
+[2024-11-19 18:48:52 INF] HTTP GET /api/account/userdata responded 401 in 0.2098 ms
+[2024-11-19 18:48:52 INF] HTTP GET /api/account/userdata responded 401 in 0.3979 ms
